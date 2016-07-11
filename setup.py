@@ -12,6 +12,7 @@ setup(
     license='MIT',
     url='https://github.com/hroncok/octoclient',
     packages=[p for p in find_packages() if p != 'test'],
+    install_requires=['requests'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
