@@ -8,9 +8,11 @@ class OctoClient:
     Encapsulates communication with one OctoPrint instance
     '''
 
-    def __init__(self, *, url=None, apikey=None):
+    def __init__(self, *, url=None, apikey=None, session=None):
         '''
         Initialize the object with URL and API key
+
+        If a session is provided, it will be used (mostly for testing)
         '''
         if not url:
             raise TypeError('Required argument \'url\' not found or emtpy')
@@ -25,7 +27,7 @@ class OctoClient:
 
         self.url = '{}://{}'.format(parsed.scheme, parsed.netloc)
 
-        self.session = requests.Session()
+        self.session = session or requests.Session()
         self.session.headers.update({'X-Api-Key': apikey})
 
         # Try a simple request to see if the API key works
