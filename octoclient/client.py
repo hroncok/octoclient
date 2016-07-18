@@ -47,14 +47,20 @@ class OctoClient:
         '''
         url = urlparse.urljoin(self.url, path)
         response = self.session.get(url)
+        self._check_response(response)
 
+        return response.json()
+
+    def _check_response(self, response):
+        '''
+        Make sure the response status code was 200, raise otherwise
+        '''
         if response.status_code != 200:
             error = response.text
             msg = 'Reply for {} was not OK: {} ({})'
-            msg = msg.format(url, error, response.status_code)
+            msg = msg.format(response.url, error, response.status_code)
             raise RuntimeError(msg)
-
-        return response.json()
+        return response
 
     def version(self):
         '''
