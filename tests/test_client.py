@@ -16,46 +16,47 @@ with Betamax.configure() as config:
 
 
 @pytest.mark.usefixtures('betamax_session')
+@pytest.fixture
+def client(betamax_session):
+    return OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+
+
 class TestClient:
+    @pytest.mark.usefixtures('betamax_session')
     def test_init_works_with_good_auth(self, betamax_session):
         # Should not raise anything
         OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
 
+    @pytest.mark.usefixtures('betamax_session')
     def test_init_raises_with_bad_auth(self, betamax_session):
         with pytest.raises(RuntimeError):
             OctoClient(url=URL, apikey='nope', session=betamax_session)
 
-    def test_files_contains_files_and_free_space_info(self, betamax_session):
-        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
-        files = oc.files()
+    def test_files_contains_files_and_free_space_info(self, client):
+        files = client.files()
         assert 'hodorstop.gcode' in [f['name'] for f in files['files']]
         assert isinstance(files['free'], int)
 
-    def test_files_local_works(self, betamax_session):
-        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
-        files = oc.files('local')
+    def test_files_local_works(self, client):
+        files = client.files('local')
         assert 'hodorstop.gcode' in [f['name'] for f in files['files']]
         assert isinstance(files['free'], int)
 
-    def test_files_sdcard_works(self, betamax_session):
-        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
-        files = oc.files('sdcard')
+    def test_files_sdcard_works(self, client):
+        files = client.files('sdcard')
         assert not files['files']  # no files on sdcard
         assert 'free' not in files  # API doesn't report that back
 
-    def test_files_bogus_location_raises(self, betamax_session):
-        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+    def test_files_bogus_location_raises(self, client):
         with pytest.raises(RuntimeError):
-            oc.files('fantomas')
+            client.files('fantomas')
 
     @pytest.mark.parametrize('filename', ('hodorstop.gcode', 'plate2.gcode'))
-    def test_info_for_specific_file(self, betamax_session, filename):
-        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
-        f = oc.files('local/{}'.format(filename))
+    def test_info_for_specific_file(self, client, filename):
+        f = client.files('local/{}'.format(filename))
         assert f['name'] == filename
 
     @pytest.mark.parametrize('filename', ('nietzsche.gcode', 'noexist.gcode'))
-    def test_nonexisting_file_raises(self, betamax_session, filename):
-        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+    def test_nonexisting_file_raises(self, client, filename):
         with pytest.raises(RuntimeError):
-            oc.files('local/{}'.format(filename))
+            client.files('local/{}'.format(filename))

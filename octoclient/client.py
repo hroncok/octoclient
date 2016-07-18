@@ -71,6 +71,8 @@ class OctoClient:
         available on the selected location and - if targeting the local
         location - regarding the disk space still available locally in the
         system
+
+        If location is a file, retrieves the selected file''s information
         '''
         if location:
             return self._get('/api/files/{}'.format(location))
