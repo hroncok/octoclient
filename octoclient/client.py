@@ -58,6 +58,6 @@ class OctoClient:
 
     def version(self):
         '''
-        Get the version info
+        Retrieve information regarding server and API version
         '''
         return self._get('/api/version')
