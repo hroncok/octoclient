@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from betamax import Betamax
 
@@ -9,6 +11,8 @@ APIKEY = 'YouShallNotPass'
 
 with Betamax.configure() as config:
     config.cassette_library_dir = 'tests/fixtures/cassettes'
+    record_mode = os.environ.get('RECORD', 'none')
+    config.default_cassette_options['record_mode'] = record_mode
 
 
 @pytest.mark.usefixtures('betamax_session')
@@ -43,3 +47,15 @@ class TestClient:
         oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
         with pytest.raises(RuntimeError):
             oc.files('fantomas')
+
+    @pytest.mark.parametrize('filename', ('hodorstop.gcode', 'plate2.gcode'))
+    def test_info_for_specific_file(self, betamax_session, filename):
+        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+        f = oc.files('local/{}'.format(filename))
+        assert f['name'] == filename
+
+    @pytest.mark.parametrize('filename', ('nietzsche.gcode', 'noexist.gcode'))
+    def test_nonexisting_file_raises(self, betamax_session, filename):
+        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+        with pytest.raises(RuntimeError):
+            oc.files('local/{}'.format(filename))
