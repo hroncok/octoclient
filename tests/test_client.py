@@ -8,7 +8,6 @@ from octoclient import OctoClient
 
 URL = 'http://printer15.local'
 APIKEY = 'YouShallNotPass'
-GCODES = ('homex.gcode',)  # due to betamax limits, only have one
 
 with Betamax.configure() as config:
     config.cassette_library_dir = 'tests/fixtures/cassettes'
@@ -22,8 +21,14 @@ def client(betamax_session):
     return OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
 
 
-def gcode(filename):
-    return 'tests/fixtures/gcodes/{}'.format(filename)
+@pytest.fixture
+def gcode():
+    class GCode:
+        def __init__(self, filename):
+            self.filename = filename
+            self.path = 'tests/fixtures/gcodes/{}'.format(filename)
+
+    return GCode('homex.gcode')
 
 
 class TestClient:
@@ -62,34 +67,30 @@ class TestClient:
         with pytest.raises(RuntimeError):
             client.files(filename)
 
-    @pytest.mark.parametrize('filename', GCODES)
-    def test_upload_by_path(self, client, filename):
-        f = client.upload(gcode(filename))
+    def test_upload_by_path(self, client, gcode):
+        f = client.upload(gcode.path)
         assert f['done']
-        assert f['files']['local']['name'] == filename
-        client.delete(filename)
+        assert f['files']['local']['name'] == gcode.filename
+        client.delete(gcode.filename)
 
-    @pytest.mark.parametrize('filename', GCODES)
-    def test_upload_file_object(self, client, filename):
-        with open(gcode(filename)) as f:
+    def test_upload_file_object(self, client, gcode):
+        with open(gcode.path) as f:
             f = client.upload(('fake.gcode', f))
             assert f['done']
             assert f['files']['local']['name'] == 'fake.gcode'
         client.delete('fake.gcode')
 
-    @pytest.mark.parametrize('filename', GCODES)
-    def test_upload_and_select(self, client, filename):
-        f = client.upload(gcode(filename), select=True)
+    def test_upload_and_select(self, client, gcode):
+        f = client.upload(gcode.path, select=True)
         assert f['done']
-        assert f['files']['local']['name'] == filename
+        assert f['files']['local']['name'] == gcode.filename
         # TODO check that the file got selected
-        client.delete(filename)
+        client.delete(gcode.filename)
 
-    @pytest.mark.parametrize('filename', GCODES)
-    def test_upload_and_print(self, client, filename):
-        f = client.upload(gcode(filename), print=True)
+    def test_upload_and_print(self, client, gcode):
+        f = client.upload(gcode.path, print=True)
         assert f['done']
-        assert f['files']['local']['name'] == filename
+        assert f['files']['local']['name'] == gcode.filename
         # TODO check that the file got selected and is printed
         # TODO wait for finish
-        client.delete(filename)
+        client.delete(gcode.filename)
