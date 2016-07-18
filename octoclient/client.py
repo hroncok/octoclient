@@ -61,3 +61,10 @@ class OctoClient:
         Retrieve information regarding server and API version
         '''
         return self._get('/api/version')
+
+    def files(self):
+        '''
+        Retrieve information regarding all files currently available and
+        regarding the disk space still available locally in the system
+        '''
+        return self._get('/api/files')
