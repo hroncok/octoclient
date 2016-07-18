@@ -51,25 +51,22 @@ class TestClient:
         assert files['files'] == []  # no files on sdcard
         assert 'free' not in files  # API doesn't report that back
 
-    def test_files_bogus_location_raises(self, client):
-        with pytest.raises(RuntimeError):
-            client.files('fantomas')
-
     @pytest.mark.parametrize('filename', ('hodorstop.gcode', 'plate2.gcode'))
     def test_info_for_specific_file(self, client, filename):
-        f = client.files('local/{}'.format(filename))
+        f = client.files(filename)
         assert f['name'] == filename
 
     @pytest.mark.parametrize('filename', ('nietzsche.gcode', 'noexist.gcode'))
     def test_nonexisting_file_raises(self, client, filename):
         with pytest.raises(RuntimeError):
-            client.files('local/{}'.format(filename))
+            client.files(filename)
 
     @pytest.mark.parametrize('filename', ('homex.gcode',))
     def test_upload_by_path(self, client, filename):
         f = client.upload(gcode(filename))
         assert f['done']
         assert f['files']['local']['name'] == filename
+        client.delete(filename)
 
     @pytest.mark.parametrize('filename', ('homex.gcode',))
     def test_upload_file_object(self, client, filename):
@@ -77,6 +74,7 @@ class TestClient:
             f = client.upload(('fake.gcode', f))
             assert f['done']
             assert f['files']['local']['name'] == 'fake.gcode'
+        client.delete('fake.gcode')
 
     @pytest.mark.parametrize('filename', ('homex.gcode',))
     def test_upload_and_select(self, client, filename):
@@ -84,6 +82,7 @@ class TestClient:
         assert f['done']
         assert f['files']['local']['name'] == filename
         # TODO check that the file got selected
+        client.delete(filename)
 
     @pytest.mark.parametrize('filename', ('homex.gcode',))
     def test_upload_and_print(self, client, filename):
@@ -91,3 +90,5 @@ class TestClient:
         assert f['done']
         assert f['files']['local']['name'] == filename
         # TODO check that the file got selected and is printed
+        # TODO wait for finish
+        client.delete(filename)

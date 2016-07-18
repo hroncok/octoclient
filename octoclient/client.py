@@ -70,6 +70,21 @@ class OctoClient:
 
         return response.json()
 
+    def _delete(self, path, data=None, files=None):
+        '''
+        Perform HTTP DELETE on given path with the auth header
+
+        Path shall be the ending part of the URL,
+        i.e. it should not be full URL
+
+        Raises a RuntimeError when not 20x OK-ish
+
+        Returns nothing
+        '''
+        url = urlparse.urljoin(self.url, path)
+        response = self.session.delete(url)
+        self._check_response(response)
+
     def _check_response(self, response):
         '''
         Make sure the response status code was 20x, raise otherwise
@@ -87,6 +102,11 @@ class OctoClient:
         '''
         return self._get('/api/version')
 
+    def _prepend_local(self, location):
+        if location.split('/')[0] not in ('local', 'sdcard'):
+            return 'local/' + location
+        return location
+
     def files(self, location=None):
         '''
         Retrieve information regarding all files currently available and
@@ -100,6 +120,7 @@ class OctoClient:
         If location is a file, retrieves the selected file''s information
         '''
         if location:
+            location = self._prepend_local(location)
             return self._get('/api/files/{}'.format(location))
         return self._get('/api/files')
 
@@ -138,3 +159,12 @@ class OctoClient:
 
             return self._post('/api/files/{}'.format(location),
                               files=files, data=data)
+
+    def delete(self, location):
+        '''
+        Delete the selected filename on the selected target
+
+        Location is target/filename, defaults to local/filename
+        '''
+        location = self._prepend_local(location)
+        self._delete('/api/files/{}'.format(location))
