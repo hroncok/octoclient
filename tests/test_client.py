@@ -76,3 +76,11 @@ class TestClient:
         f = client.upload(gcode(filename), select=True)
         assert f['done']
         assert f['files']['local']['name'] == filename
+        # TODO check that the file got selected
+
+    @pytest.mark.parametrize('filename', ('homex.gcode',))
+    def test_upload_and_print(self, client, filename):
+        f = client.upload(gcode(filename), print=True)
+        assert f['done']
+        assert f['files']['local']['name'] == filename
+        # TODO check that the file got selected and is printed
