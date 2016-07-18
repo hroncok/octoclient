@@ -74,10 +74,10 @@ class TestClient:
         client.delete(gcode.filename)
 
     def test_upload_file_object(self, client, gcode):
-        with open(gcode.path) as f:
-            f = client.upload(('fake.gcode', f))
-            assert f['done']
-            assert f['files']['local']['name'] == 'fake.gcode'
+        with open(gcode.path) as fo:
+            f = client.upload(('fake.gcode', fo))
+        assert f['done']
+        assert f['files']['local']['name'] == 'fake.gcode'
         client.delete('fake.gcode')
 
     def test_upload_and_select(self, client, gcode):
