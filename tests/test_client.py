@@ -8,6 +8,7 @@ from octoclient import OctoClient
 
 URL = 'http://printer15.local'
 APIKEY = 'YouShallNotPass'
+GCODES = ('homex.gcode',)  # due to betamax limits, only have one
 
 with Betamax.configure() as config:
     config.cassette_library_dir = 'tests/fixtures/cassettes'
@@ -61,14 +62,14 @@ class TestClient:
         with pytest.raises(RuntimeError):
             client.files(filename)
 
-    @pytest.mark.parametrize('filename', ('homex.gcode',))
+    @pytest.mark.parametrize('filename', GCODES)
     def test_upload_by_path(self, client, filename):
         f = client.upload(gcode(filename))
         assert f['done']
         assert f['files']['local']['name'] == filename
         client.delete(filename)
 
-    @pytest.mark.parametrize('filename', ('homex.gcode',))
+    @pytest.mark.parametrize('filename', GCODES)
     def test_upload_file_object(self, client, filename):
         with open(gcode(filename)) as f:
             f = client.upload(('fake.gcode', f))
@@ -76,7 +77,7 @@ class TestClient:
             assert f['files']['local']['name'] == 'fake.gcode'
         client.delete('fake.gcode')
 
-    @pytest.mark.parametrize('filename', ('homex.gcode',))
+    @pytest.mark.parametrize('filename', GCODES)
     def test_upload_and_select(self, client, filename):
         f = client.upload(gcode(filename), select=True)
         assert f['done']
@@ -84,7 +85,7 @@ class TestClient:
         # TODO check that the file got selected
         client.delete(filename)
 
-    @pytest.mark.parametrize('filename', ('homex.gcode',))
+    @pytest.mark.parametrize('filename', GCODES)
     def test_upload_and_print(self, client, filename):
         f = client.upload(gcode(filename), print=True)
         assert f['done']
