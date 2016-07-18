@@ -62,9 +62,16 @@ class OctoClient:
         '''
         return self._get('/api/version')
 
-    def files(self):
+    def files(self, location=None):
         '''
         Retrieve information regarding all files currently available and
         regarding the disk space still available locally in the system
+
+        If location is used, retrieve information regarding the files currently
+        available on the selected location and - if targeting the local
+        location - regarding the disk space still available locally in the
+        system
         '''
+        if location:
+            return self._get('/api/files/{}'.format(location))
         return self._get('/api/files')

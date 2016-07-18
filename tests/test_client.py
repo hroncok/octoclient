@@ -26,3 +26,20 @@ class TestClient:
         files = oc.files()
         assert 'hodorstop.gcode' in [f['name'] for f in files['files']]
         assert isinstance(files['free'], int)
+
+    def test_files_local_works(self, betamax_session):
+        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+        files = oc.files('local')
+        assert 'hodorstop.gcode' in [f['name'] for f in files['files']]
+        assert isinstance(files['free'], int)
+
+    def test_files_sdcard_works(self, betamax_session):
+        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+        files = oc.files('sdcard')
+        assert not files['files']  # no files on sdcard
+        assert 'free' not in files  # API doesn't report that back
+
+    def test_files_bogus_location_raises(self, betamax_session):
+        oc = OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
+        with pytest.raises(RuntimeError):
+            oc.files('fantomas')
