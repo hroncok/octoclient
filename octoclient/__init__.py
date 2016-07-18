@@ -1,1 +1,1 @@
-from .client import OctoClient
+from .client import OctoClient  # noqa
