@@ -1,3 +1,5 @@
+from contextlib import contextmanager
+import os
 from urllib import parse as urlparse
 
 import requests
@@ -41,9 +43,9 @@ class OctoClient:
         Path shall be the ending part of the URL,
         i.e. it should not be full URL
 
-        Raises a RuntimeError when not 200 OK
+        Raises a RuntimeError when not 20x OK-ish
 
-        Return JSON decoded data
+        Returns JSON decoded data
         '''
         url = urlparse.urljoin(self.url, path)
         response = self.session.get(url)
@@ -51,11 +53,28 @@ class OctoClient:
 
         return response.json()
 
+    def _post(self, path, data=None, files=None):
+        '''
+        Perform HTTP POST on given path with the auth header
+
+        Path shall be the ending part of the URL,
+        i.e. it should not be full URL
+
+        Raises a RuntimeError when not 20x OK-ish
+
+        Returns JSON decoded data
+        '''
+        url = urlparse.urljoin(self.url, path)
+        response = self.session.post(url, data=data, files=files)
+        self._check_response(response)
+
+        return response.json()
+
     def _check_response(self, response):
         '''
-        Make sure the response status code was 200, raise otherwise
+        Make sure the response status code was 20x, raise otherwise
         '''
-        if response.status_code != 200:
+        if not (200 <= response.status_code < 210):
             error = response.text
             msg = 'Reply for {} was not OK: {} ({})'
             msg = msg.format(response.url, error, response.status_code)
@@ -83,3 +102,39 @@ class OctoClient:
         if location:
             return self._get('/api/files/{}'.format(location))
         return self._get('/api/files')
+
+    @contextmanager
+    def _file_tuple(self, file):
+        '''
+        Yields a tuple with filename and file object
+
+        Expects the same thing or a path as input
+        '''
+        mime = 'application/octet-stream'
+
+        try:
+            exists = os.path.exists(file)
+        except:
+            exists = False
+
+        if exists:
+            filename = os.path.basename(file)
+            with open(file, 'rb') as f:
+                yield (filename, f, mime)
+        else:
+            yield file + (mime,)
+
+    def upload(self, file, location='local',
+               select=False, print=False, userdata=None):
+        '''
+        Upload a given file
+        It can be a path or a tuple with a filename and a file-like object
+        '''
+        with self._file_tuple(file) as file_tuple:
+            files = {'file': file_tuple}
+            data = {'select': select, 'print': print}
+            if userdata:
+                data['userdata'] = userdata
+
+            return self._post('/api/files/{}'.format(location),
+                              files=files, data=data)

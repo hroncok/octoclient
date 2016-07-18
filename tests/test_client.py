@@ -21,6 +21,10 @@ def client(betamax_session):
     return OctoClient(url=URL, apikey=APIKEY, session=betamax_session)
 
 
+def gcode(filename):
+    return 'tests/fixtures/gcodes/{}'.format(filename)
+
+
 class TestClient:
     @pytest.mark.usefixtures('betamax_session')
     def test_init_works_with_good_auth(self, betamax_session):
@@ -60,3 +64,9 @@ class TestClient:
     def test_nonexisting_file_raises(self, client, filename):
         with pytest.raises(RuntimeError):
             client.files('local/{}'.format(filename))
+
+    @pytest.mark.parametrize('filename', ('homex.gcode',))
+    def test_upload_by_path(self, client, filename):
+        f = client.upload(gcode(filename))
+        assert f['done']
+        assert f['files']['local']['name'] == filename
