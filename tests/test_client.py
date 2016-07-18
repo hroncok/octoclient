@@ -44,7 +44,7 @@ class TestClient:
 
     def test_files_sdcard_works(self, client):
         files = client.files('sdcard')
-        assert not files['files']  # no files on sdcard
+        assert files['files'] == []  # no files on sdcard
         assert 'free' not in files  # API doesn't report that back
 
     def test_files_bogus_location_raises(self, client):
