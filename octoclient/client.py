@@ -124,7 +124,7 @@ class OctoClient:
         else:
             yield file + (mime,)
 
-    def upload(self, file, location='local',
+    def upload(self, file, *, location='local',
                select=False, print=False, userdata=None):
         '''
         Upload a given file
@@ -132,7 +132,7 @@ class OctoClient:
         '''
         with self._file_tuple(file) as file_tuple:
             files = {'file': file_tuple}
-            data = {'select': select, 'print': print}
+            data = {'select': str(select).lower(), 'print': str(print).lower()}
             if userdata:
                 data['userdata'] = userdata
 
