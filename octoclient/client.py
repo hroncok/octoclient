@@ -70,7 +70,7 @@ class OctoClient:
 
         return response.json()
 
-    def _delete(self, path, data=None, files=None):
+    def _delete(self, path):
         '''
         Perform HTTP DELETE on given path with the auth header
 
