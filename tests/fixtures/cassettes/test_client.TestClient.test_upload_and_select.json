@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2016-07-25T14:01:01",
+      "recorded_at": "2016-07-25T14:38:11",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -43,7 +43,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetHQ.UfoUN3UfgJAOvLcSG5jdYHEg_40; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne10w.6JN82vY9s4DEwBhv1ZDiSsIj1-E; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
@@ -57,11 +57,11 @@
       }
     },
     {
-      "recorded_at": "2016-07-25T14:01:04",
+      "recorded_at": "2016-07-25T14:38:15",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "--fd7f85fd1a07425aa9872658f3d951d7\r\nContent-Disposition: form-data; name=\"print\"\r\n\r\nfalse\r\n--fd7f85fd1a07425aa9872658f3d951d7\r\nContent-Disposition: form-data; name=\"select\"\r\n\r\ntrue\r\n--fd7f85fd1a07425aa9872658f3d951d7\r\nContent-Disposition: form-data; name=\"file\"; filename=\"homex.gcode\"\r\nContent-Type: application/octet-stream\r\n\r\nG28 X\n\r\n--fd7f85fd1a07425aa9872658f3d951d7--\r\n"
+          "string": "--42a345b6f18843e586dd3cd1102c0705\r\nContent-Disposition: form-data; name=\"print\"\r\n\r\nfalse\r\n--42a345b6f18843e586dd3cd1102c0705\r\nContent-Disposition: form-data; name=\"select\"\r\n\r\ntrue\r\n--42a345b6f18843e586dd3cd1102c0705\r\nContent-Disposition: form-data; name=\"file\"; filename=\"homex.gcode\"\r\nContent-Type: application/octet-stream\r\n\r\nG28 X\n\r\n--42a345b6f18843e586dd3cd1102c0705--\r\n"
         },
         "headers": {
           "Accept": [
@@ -77,10 +77,10 @@
             "375"
           ],
           "Content-Type": [
-            "multipart/form-data; boundary=fd7f85fd1a07425aa9872658f3d951d7"
+            "multipart/form-data; boundary=42a345b6f18843e586dd3cd1102c0705"
           ],
           "Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetHQ.UfoUN3UfgJAOvLcSG5jdYHEg_40"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne10w.6JN82vY9s4DEwBhv1ZDiSsIj1-E"
           ],
           "User-Agent": [
             "python-requests/2.10.0"
@@ -114,7 +114,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetIA.bbbvmqxkC3jpH7CRYFB3qZG4ppU; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne11w.eGdWQySHByYfGx_6kPlR8uzlfec; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
@@ -128,7 +128,66 @@
       }
     },
     {
-      "recorded_at": "2016-07-25T14:01:11",
+      "recorded_at": "2016-07-25T14:38:16",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne11w.eGdWQySHByYfGx_6kPlR8uzlfec"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/job"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"job\": {\n    \"averagePrintTime\": null, \n    \"estimatedPrintTime\": null, \n    \"filament\": {\n      \"tool0\": {\n        \"length\": 0.0, \n        \"volume\": 0.0\n      }\n    }, \n    \"file\": {\n      \"date\": 1469457494, \n      \"name\": \"homex.gcode\", \n      \"origin\": \"local\", \n      \"size\": 6\n    }, \n    \"lastPrintTime\": null\n  }, \n  \"progress\": {\n    \"completion\": 0, \n    \"filepos\": null, \n    \"printTime\": null, \n    \"printTimeLeft\": null\n  }, \n  \"state\": \"Operational\"\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "469"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne12A.Ub88CqtTjI9HOqjHGmqyYmGrQ-8; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/job"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:38:21",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -148,7 +207,7 @@
             "0"
           ],
           "Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetIA.bbbvmqxkC3jpH7CRYFB3qZG4ppU"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne12A.Ub88CqtTjI9HOqjHGmqyYmGrQ-8"
           ],
           "User-Agent": [
             "python-requests/2.10.0"
@@ -176,7 +235,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetJw.v4TNGw6bUPJK775obaorDrcSuJE; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne13Q.OIBIN2LRguzmaK1rggKwA80_YlQ; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"

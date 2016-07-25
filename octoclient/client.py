@@ -252,3 +252,9 @@ class OctoClient:
         '''
         data = {'command': 'fake_ack'}
         self._post('/api/connection', json=data, ret=False)
+
+    def job_info(self):
+        '''
+        Retrieve information about the current job (if there is one)
+        '''
+        return self._get('/api/job')

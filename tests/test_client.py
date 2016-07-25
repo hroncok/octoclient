@@ -97,14 +97,16 @@ class TestClient:
         f = client.upload(gcode.path, select=True)
         assert f['done']
         assert f['files']['local']['name'] == gcode.filename
-        # TODO check that the file got selected
+        selected = client.job_info()['job']['file']['name']
+        assert selected == gcode.filename
         client.delete(gcode.filename)
 
     def test_upload_and_print(self, client, gcode):
         f = client.upload(gcode.path, print=True)
         assert f['done']
         assert f['files']['local']['name'] == gcode.filename
-        # TODO check that the file got selected
+        selected = client.job_info()['job']['file']['name']
+        assert selected == gcode.filename
         assert client.state() == 'Printing'
         sleep(5)
         client.delete(gcode.filename)
@@ -112,13 +114,15 @@ class TestClient:
     def test_upload_and_select_one_by_one(self, client, gcode):
         client.upload(gcode.path)
         client.select(gcode.filename)
-        # TODO check that the file got selected
+        selected = client.job_info()['job']['file']['name']
+        assert selected == gcode.filename
         client.delete(gcode.filename)
 
     def test_upload_and_print_one_by_one(self, client, gcode):
         client.upload(gcode.path)
         client.select(gcode.filename, print=True)
-        # TODO check that the file got selected
+        selected = client.job_info()['job']['file']['name']
+        assert selected == gcode.filename
         assert client.state() == 'Printing'
         sleep(5)
         client.delete(gcode.filename)

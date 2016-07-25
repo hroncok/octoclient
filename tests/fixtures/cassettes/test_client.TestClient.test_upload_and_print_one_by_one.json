@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2016-07-25T14:01:38",
+      "recorded_at": "2016-07-25T14:38:47",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -43,7 +43,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetQg.Ma7CYf1gPfZnW_KzZ3z4YVtp3Rs; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne19w.ROeRU7kblKoSaOq5zJO_r9BtvV8; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
@@ -57,11 +57,11 @@
       }
     },
     {
-      "recorded_at": "2016-07-25T14:01:41",
+      "recorded_at": "2016-07-25T14:38:50",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "--b20bd9d67029422da3597be0f2e45765\r\nContent-Disposition: form-data; name=\"print\"\r\n\r\nfalse\r\n--b20bd9d67029422da3597be0f2e45765\r\nContent-Disposition: form-data; name=\"select\"\r\n\r\nfalse\r\n--b20bd9d67029422da3597be0f2e45765\r\nContent-Disposition: form-data; name=\"file\"; filename=\"homex.gcode\"\r\nContent-Type: application/octet-stream\r\n\r\nG28 X\n\r\n--b20bd9d67029422da3597be0f2e45765--\r\n"
+          "string": "--83e62c28107c47bcacc2c88c90a69a26\r\nContent-Disposition: form-data; name=\"print\"\r\n\r\nfalse\r\n--83e62c28107c47bcacc2c88c90a69a26\r\nContent-Disposition: form-data; name=\"select\"\r\n\r\nfalse\r\n--83e62c28107c47bcacc2c88c90a69a26\r\nContent-Disposition: form-data; name=\"file\"; filename=\"homex.gcode\"\r\nContent-Type: application/octet-stream\r\n\r\nG28 X\n\r\n--83e62c28107c47bcacc2c88c90a69a26--\r\n"
         },
         "headers": {
           "Accept": [
@@ -77,10 +77,10 @@
             "376"
           ],
           "Content-Type": [
-            "multipart/form-data; boundary=b20bd9d67029422da3597be0f2e45765"
+            "multipart/form-data; boundary=83e62c28107c47bcacc2c88c90a69a26"
           ],
           "Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetQg.Ma7CYf1gPfZnW_KzZ3z4YVtp3Rs"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne19w.ROeRU7kblKoSaOq5zJO_r9BtvV8"
           ],
           "User-Agent": [
             "python-requests/2.10.0"
@@ -114,7 +114,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRQ.idPgqQDlLBh0BnBp2MbYkW8bah4; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1-g.jLuia-QDhJLhA_Pk0ACosh2P9MA; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
@@ -128,11 +128,11 @@
       }
     },
     {
-      "recorded_at": "2016-07-25T14:01:43",
+      "recorded_at": "2016-07-25T14:38:51",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"command\": \"select\", \"print\": true}"
+          "string": "{\"print\": true, \"command\": \"select\"}"
         },
         "headers": {
           "Accept": [
@@ -151,7 +151,7 @@
             "application/json"
           ],
           "Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRQ.idPgqQDlLBh0BnBp2MbYkW8bah4"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1-g.jLuia-QDhJLhA_Pk0ACosh2P9MA"
           ],
           "User-Agent": [
             "python-requests/2.10.0"
@@ -182,7 +182,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRw.Na7AQY3SdP1kF-FTOhr0LYvQEHw; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1-w.P0zJaLc6GQj8TnmN3_s0LozfZk4; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
@@ -196,7 +196,7 @@
       }
     },
     {
-      "recorded_at": "2016-07-25T14:01:44",
+      "recorded_at": "2016-07-25T14:38:51",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -213,7 +213,66 @@
             "keep-alive"
           ],
           "Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRw.Na7AQY3SdP1kF-FTOhr0LYvQEHw"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1-w.P0zJaLc6GQj8TnmN3_s0LozfZk4"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/job"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"job\": {\n    \"averagePrintTime\": null, \n    \"estimatedPrintTime\": null, \n    \"filament\": {\n      \"tool0\": {\n        \"length\": 0.0, \n        \"volume\": 0.0\n      }\n    }, \n    \"file\": {\n      \"date\": 1469457530, \n      \"name\": \"homex.gcode\", \n      \"origin\": \"local\", \n      \"size\": 6\n    }, \n    \"lastPrintTime\": null\n  }, \n  \"progress\": {\n    \"completion\": 0, \n    \"filepos\": null, \n    \"printTime\": null, \n    \"printTimeLeft\": null\n  }, \n  \"state\": \"Printing\"\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "466"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1-w.P0zJaLc6GQj8TnmN3_s0LozfZk4; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/job"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:38:52",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1-w.P0zJaLc6GQj8TnmN3_s0LozfZk4"
           ],
           "User-Agent": [
             "python-requests/2.10.0"
@@ -241,7 +300,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetSA.xQIYCeEB4WFo24Zmgs-IVZhB5TQ; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1_A.W0jEGRMySfrGA1G6zp0cE2UDtkw; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
@@ -255,7 +314,7 @@
       }
     },
     {
-      "recorded_at": "2016-07-25T14:01:53",
+      "recorded_at": "2016-07-25T14:39:01",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -275,7 +334,7 @@
             "0"
           ],
           "Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetSA.xQIYCeEB4WFo24Zmgs-IVZhB5TQ"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne1_A.W0jEGRMySfrGA1G6zp0cE2UDtkw"
           ],
           "User-Agent": [
             "python-requests/2.10.0"
@@ -303,7 +362,7 @@
             "TornadoServer/4.0.1"
           ],
           "Set-Cookie": [
-            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetUQ.wvoGTsU-ZBJJE9ibmSDEsfEFShU; Path=/; HttpOnly"
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cne2BQ.lG4vqMFx9ATMW9FAosVM9ZqhBRM; Path=/; HttpOnly"
           ],
           "X-Clacks-Overhead": [
             "GNU Terry Pratchett"
