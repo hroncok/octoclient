@@ -22,7 +22,7 @@ with Betamax.configure() as config:
 
 def sleep(seconds):
     '''
-    If recording, sleep for a given amount of secons
+    If recording, sleep for a given amount of seconds
     '''
     if 'RECORD' in os.environ:
         time.sleep(seconds)
