@@ -221,6 +221,7 @@ class TestClient:
         assert not printer['state']['flags']['printing']
         assert 'bed' in printer['temperature']
         assert 'tool0' in printer['temperature']
+        assert 'history' not in printer['temperature']
 
     @pytest.mark.parametrize('exclude', subsets('sd', 'temperature', 'state'))
     def test_printer_with_excluded_stuff(self, client, exclude):
@@ -228,3 +229,12 @@ class TestClient:
         for key in exclude:
             assert key not in printer
         assert len(printer) == 3 - len(exclude)
+
+    def test_printer_with_history(self, client):
+        printer = client.printer(history=True)
+        assert isinstance(printer['temperature']['history'], list)
+
+    @pytest.mark.parametrize('limit', range(1, 4))
+    def test_printer_with_history_and_limit(self, client, limit):
+        printer = client.printer(history=True, limit=limit)
+        assert len(printer['temperature']['history']) == limit
