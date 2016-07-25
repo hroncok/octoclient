@@ -190,3 +190,9 @@ class TestClient:
     def test_fake_ack(self, client):
         client.fake_ack()
         # TODO What to check?
+
+    def test_logs(self, client):
+        logs = client.logs()
+        assert 'files' in logs
+        assert 'free' in logs
+        assert isinstance(logs['free'], int)
