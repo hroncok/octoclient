@@ -1,3 +1,4 @@
+import time
 import os
 
 import pytest
@@ -13,6 +14,15 @@ with Betamax.configure() as config:
     config.cassette_library_dir = 'tests/fixtures/cassettes'
     record_mode = os.environ.get('RECORD', 'none')
     config.default_cassette_options['record_mode'] = record_mode
+    config.match_options = {'uri', 'method', 'body'}
+
+
+def sleep(seconds):
+    '''
+    If recording, sleep for a given amount of secons
+    '''
+    if 'RECORD' in os.environ:
+        time.sleep(seconds)
 
 
 @pytest.mark.usefixtures('betamax_session')
@@ -119,3 +129,14 @@ class TestClient:
         assert 'options' in info
         assert 'baudrates' in info['options']
         assert 'ports' in info['options']
+
+    def test_connect_and_disconnect(self, client):
+        client.disconnect()
+        client.connect()
+        assert client.state() in ['Connecting',
+                                  'Operational',
+                                  'Opening serial port']
+        sleep(5)
+        assert client.state() == 'Operational'
+        client.disconnect()
+        assert client.state() in ['Offline', 'Closed']

@@ -191,3 +191,53 @@ class OctoClient:
         current connection state.
         '''
         return self._get('/api/connection')
+
+    def state(self):
+        '''
+        A shortcut to get the current state.
+        '''
+        return self.connection_info()['current']['state']
+
+    def connect(self, *, port=None, baudrate=None,
+                printer_profile=None, save=None, autoconnect=None):
+        '''
+        Instructs OctoPrint to connect to the printer
+
+        port: Optional, specific port to connect to. If not set the current
+        portPreference will be used, or if no preference is available auto
+        detection will be attempted.
+
+        baudrate: Optional, specific baudrate to connect with. If not set
+        the current baudratePreference will be used, or if no preference
+        is available auto detection will be attempted.
+
+        printer_profile: Optional, specific printer profile to use for
+        connection. If not set the current default printer profile
+        will be used.
+
+        save: Optional, whether to save the request's port and baudrate
+        settings as new preferences. Defaults to false if not set.
+
+        autoconnect: Optional, whether to automatically connect to the printer
+        on OctoPrint's startup in the future. If not set no changes will be
+        made to the current configuration.
+        '''
+        data = {'command': 'connect'}
+        if port is not None:
+            data['port'] = port
+        if baudrate is not None:
+            data['baudrate'] = baudrate
+        if printer_profile is not None:
+            data['printerProfile'] = printer_profile
+        if save is not None:
+            data['save'] = save
+        if autoconnect is not None:
+            data['autoconnect'] = autoconnect
+        self._post('/api/connection', json=data, ret=False)
+
+    def disconnect(self):
+        '''
+        Instructs OctoPrint to disconnect from the printer
+        '''
+        data = {'command': 'disconnect'}
+        self._post('/api/connection', json=data, ret=False)
