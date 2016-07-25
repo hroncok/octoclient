@@ -150,3 +150,7 @@ class TestClient:
         assert client.state() in ['Connecting',
                                   'Operational',
                                   'Opening serial port']
+
+    def test_fake_ack(self, client):
+        client.fake_ack()
+        # TODO What to check?

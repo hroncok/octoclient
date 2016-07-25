@@ -241,3 +241,14 @@ class OctoClient:
         '''
         data = {'command': 'disconnect'}
         self._post('/api/connection', json=data, ret=False)
+
+    def fake_ack(self):
+        '''
+        Fakes an acknowledgment message for OctoPrint in case one got lost on
+        the serial line and the communication with the printer since stalled.
+        This should only be used in "emergencies" (e.g. to save prints), the
+        reason for the lost acknowledgment should always be properly
+        investigated and removed instead of depending on this "symptom solver".
+        '''
+        data = {'command': 'fake_ack'}
+        self._post('/api/connection', json=data, ret=False)
