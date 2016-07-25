@@ -310,6 +310,19 @@ class OctoClient:
         '''
         self._delete('/api/logs/{}'.format(filename))
 
+    def _hwinfo(self, url, **kwargs):
+        '''
+        Helper method for printer(), tool(), bed() and sd()
+        '''
+        params = {}
+        if kwargs.get('exclude'):
+            params['exclude'] = ','.join(kwargs['exclude'])
+        if kwargs.get('history'):
+            params['history'] = 'true'
+        if kwargs.get('limit'):
+            params['limit'] = kwargs['limit']
+        return self._get(url, params=params)
+
     def printer(self, *, exclude=None, history=False, limit=None):
         '''
         Retrieves the current state of the printer
@@ -328,11 +341,18 @@ class OctoClient:
         Clients can specify a list of attributes to not return in the response
         (e.g. if they don't need it) via the exclude argument.
         '''
-        params = {}
-        if exclude:
-            params['exclude'] = ','.join(exclude)
-        if history:
-            params['history'] = 'true'
-        if limit:
-            params['limit'] = limit
-        return self._get('/api/printer', params=params)
+        return self._hwinfo('/api/printer', exclude=exclude,
+                            history=history, limit=limit)
+
+    def tool(self, *, history=False, limit=None):
+        '''
+        Retrieves the current temperature data (actual, target and offset) plus
+        optionally a (limited) history (actual, target, timestamp) for all of
+        the printer's available tools.
+
+        It's also possible to retrieve the temperature history by setting the
+        history argument. The amount of returned history data points can be
+        limited using the limit argument.
+        '''
+        return self._hwinfo('/api/printer/tool',
+                            history=history, limit=limit)

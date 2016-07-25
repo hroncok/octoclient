@@ -238,3 +238,21 @@ class TestClient:
     def test_printer_with_history_and_limit(self, client, limit):
         printer = client.printer(history=True, limit=limit)
         assert len(printer['temperature']['history']) == limit
+
+    @pytest.mark.parametrize('key', ('actual', 'target', 'offset'))
+    def test_tool(self, client, key):
+        tool = client.tool()
+        assert 'history' not in tool
+        assert isinstance(tool['tool0'][key], (float, int))
+
+    @pytest.mark.parametrize('key', ('actual', 'target'))
+    def test_tool_with_history(self, client, key):
+        tool = client.tool(history=True)
+        assert 'history' in tool
+        for h in tool['history']:
+            assert isinstance(h['tool0'][key], (float, int))
+
+    @pytest.mark.parametrize('limit', range(1, 4))
+    def test_tool_with_history_and_limit(self, client, limit):
+        tool = client.tool(history=True, limit=limit)
+        assert len(tool['history']) == limit
