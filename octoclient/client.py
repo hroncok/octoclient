@@ -183,3 +183,11 @@ class OctoClient:
             'print': print,
         }
         self._post('/api/files/{}'.format(location), json=data, ret=False)
+
+    def connection_info(self):
+        '''
+        Retrieve the current connection settings, including information
+        regarding the available baudrates and serial ports and the
+        current connection state.
+        '''
+        return self._get('/api/connection')

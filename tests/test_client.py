@@ -107,3 +107,15 @@ class TestClient:
         # TODO check that the file got selected and is printed
         # TODO wait for finish
         client.delete(gcode.filename)
+
+    def test_connection_info(self, client):
+        info = client.connection_info()
+
+        assert 'current' in info
+        assert 'baudrate' in info['current']
+        assert 'port' in info['current']
+        assert 'state' in info['current']
+
+        assert 'options' in info
+        assert 'baudrates' in info['options']
+        assert 'ports' in info['options']
