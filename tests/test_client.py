@@ -94,3 +94,16 @@ class TestClient:
         # TODO check that the file got selected and is printed
         # TODO wait for finish
         client.delete(gcode.filename)
+
+    def test_upload_and_select_one_by_one(self, client, gcode):
+        client.upload(gcode.path)
+        client.select(gcode.filename)
+        # TODO check that the file got selected
+        client.delete(gcode.filename)
+
+    def test_upload_and_print_one_by_one(self, client, gcode):
+        client.upload(gcode.path)
+        client.select(gcode.filename, print=True)
+        # TODO check that the file got selected and is printed
+        # TODO wait for finish
+        client.delete(gcode.filename)

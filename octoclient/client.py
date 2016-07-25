@@ -53,7 +53,7 @@ class OctoClient:
 
         return response.json()
 
-    def _post(self, path, data=None, files=None):
+    def _post(self, path, data=None, files=None, json=None, ret=True):
         '''
         Perform HTTP POST on given path with the auth header
 
@@ -65,10 +65,11 @@ class OctoClient:
         Returns JSON decoded data
         '''
         url = urlparse.urljoin(self.url, path)
-        response = self.session.post(url, data=data, files=files)
+        response = self.session.post(url, data=data, files=files, json=json)
         self._check_response(response)
 
-        return response.json()
+        if ret:
+            return response.json()
 
     def _delete(self, path):
         '''
@@ -168,3 +169,17 @@ class OctoClient:
         '''
         location = self._prepend_local(location)
         self._delete('/api/files/{}'.format(location))
+
+    def select(self, location, *, print=False):
+        '''
+        Selects a file for printing
+
+        Location is target/filename, defaults to local/filename
+        If print is True, the selected file starts to print immediately
+        '''
+        location = self._prepend_local(location)
+        data = {
+            'command': 'select',
+            'print': print,
+        }
+        self._post('/api/files/{}'.format(location), json=data, ret=False)
