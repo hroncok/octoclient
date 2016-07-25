@@ -258,3 +258,12 @@ class OctoClient:
         Retrieve information about the current job (if there is one)
         '''
         return self._get('/api/job')
+
+    def print(self):
+        '''
+        Starts the print of the currently selected file
+
+        Use select() to select a file
+        '''
+        data = {'command': 'start'}
+        self._post('/api/job', json=data, ret=False)

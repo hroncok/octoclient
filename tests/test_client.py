@@ -118,11 +118,21 @@ class TestClient:
         assert selected == gcode.filename
         client.delete(gcode.filename)
 
-    def test_upload_and_print_one_by_one(self, client, gcode):
+    def test_upload_and_select_with_print_one_by_one(self, client, gcode):
         client.upload(gcode.path)
         client.select(gcode.filename, print=True)
         selected = client.job_info()['job']['file']['name']
         assert selected == gcode.filename
+        assert client.state() == 'Printing'
+        sleep(5)
+        client.delete(gcode.filename)
+
+    def test_upload_and_select_and_print_one_by_one(self, client, gcode):
+        client.upload(gcode.path)
+        client.select(gcode.filename)
+        selected = client.job_info()['job']['file']['name']
+        assert selected == gcode.filename
+        client.print()
         assert client.state() == 'Printing'
         sleep(5)
         client.delete(gcode.filename)
