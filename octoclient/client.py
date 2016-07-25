@@ -267,3 +267,31 @@ class OctoClient:
         '''
         data = {'command': 'start'}
         self._post('/api/job', json=data, ret=False)
+
+    def pause(self):
+        '''
+        Pauses/unpauses the current print job
+
+        There must be an active print job for this to work
+        '''
+        data = {'command': 'pause'}
+        self._post('/api/job', json=data, ret=False)
+
+    def restart(self):
+        '''
+        Restart the print of the currently selected file from the beginning
+
+        There must be an active print job for this to work and the print job
+        must currently be paused
+        '''
+        data = {'command': 'restart'}
+        self._post('/api/job', json=data, ret=False)
+
+    def cancel(self):
+        '''
+        Cancels the current print job
+
+        There must be an active print job for this to work
+        '''
+        data = {'command': 'cancel'}
+        self._post('/api/job', json=data, ret=False)

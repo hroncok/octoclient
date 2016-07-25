@@ -137,6 +137,28 @@ class TestClient:
         sleep(5)
         client.delete(gcode.filename)
 
+    def test_upload_print_pause_cancel(self, client, gcode):
+        client.upload(gcode.path)
+        client.select(gcode.filename, print=True)
+        sleep(1)
+        client.pause()
+        assert client.state() == 'Paused'
+        sleep(1)
+        client.cancel()
+        sleep(1)
+        client.delete(gcode.filename)
+
+    def test_upload_print_pause_restart(self, client, gcode):
+        client.upload(gcode.path)
+        client.select(gcode.filename, print=True)
+        sleep(1)
+        client.pause()
+        sleep(1)
+        client.restart()
+        assert client.state() == 'Printing'
+        sleep(5)
+        client.delete(gcode.filename)
+
     def test_connection_info(self, client):
         info = client.connection_info()
 
