@@ -36,7 +36,7 @@ class OctoClient:
         # Keep the info, in case we need it later
         self.version = self.version()
 
-    def _get(self, path):
+    def _get(self, path, params=None):
         '''
         Perform HTTP GET on given path with the auth header
 
@@ -48,7 +48,7 @@ class OctoClient:
         Returns JSON decoded data
         '''
         url = urlparse.urljoin(self.url, path)
-        response = self.session.get(url)
+        response = self.session.get(url, params=params)
         self._check_response(response)
 
         return response.json()
@@ -309,3 +309,30 @@ class OctoClient:
         Delete the selected log file with name filename
         '''
         self._delete('/api/logs/{}'.format(filename))
+
+    def printer(self, *, exclude=None, history=False, limit=None):
+        '''
+        Retrieves the current state of the printer
+
+        Returned information includes:
+
+        * temperature information
+        * SD state (if available)
+        * general printer state
+
+        Temperature information can also be made to include the printer's
+        temperature history by setting the history argument.
+        The amount of data points to return here can be limited using the limit
+        argument.
+
+        Clients can specify a list of attributes to not return in the response
+        (e.g. if they don't need it) via the exclude argument.
+        '''
+        params = {}
+        if exclude:
+            params['exclude'] = ','.join(exclude)
+        if history:
+            params['history'] = 'true'
+        if limit:
+            params['limit'] = limit
+        return self._get('/api/printer', params=params)

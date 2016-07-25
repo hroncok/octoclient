@@ -202,3 +202,13 @@ class TestClient:
         logs = client.logs()
         for log in logs['files']:
             assert log['name'] != 'serial.log'
+
+    def test_printer(self, client):
+        printer = client.printer()
+        assert 'ready' in printer['sd']
+        assert printer['state']['flags']['operational']
+        assert printer['state']['flags']['ready']
+        assert not printer['state']['flags']['error']
+        assert not printer['state']['flags']['printing']
+        assert 'bed' in printer['temperature']
+        assert 'tool0' in printer['temperature']
