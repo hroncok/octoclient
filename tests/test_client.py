@@ -196,3 +196,9 @@ class TestClient:
         assert 'files' in logs
         assert 'free' in logs
         assert isinstance(logs['free'], int)
+
+    def test_delete_log(self, client):
+        client.delete_log('serial.log')
+        logs = client.logs()
+        for log in logs['files']:
+            assert log['name'] != 'serial.log'

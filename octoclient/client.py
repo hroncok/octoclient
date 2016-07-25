@@ -303,3 +303,9 @@ class OctoClient:
         location the log files are being stored
         '''
         return self._get('/api/logs')
+
+    def delete_log(self, filename):
+        '''
+        Delete the selected log file with name filename
+        '''
+        self._delete('/api/logs/{}'.format(filename))

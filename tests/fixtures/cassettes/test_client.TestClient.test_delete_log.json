@@ -1,0 +1,182 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2016-07-25T15:40:55",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/version"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.2\"\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "40"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnfEhw.24JHRiUCF_9UqCCVUHPXZgi-AR0; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/version"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T15:40:55",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnfEhw.24JHRiUCF_9UqCCVUHPXZgi-AR0"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "http://printer15.local/api/logs/serial.log"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Content-Length": [
+            "0"
+          ],
+          "Content-Type": [
+            "text/html; charset=utf-8"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnfEhw.24JHRiUCF_9UqCCVUHPXZgi-AR0; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "NO CONTENT"
+        },
+        "url": "http://printer15.local/api/logs/serial.log"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T15:40:55",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnfEhw.24JHRiUCF_9UqCCVUHPXZgi-AR0"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/logs"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"files\": [\n    {\n      \"date\": 1452183342, \n      \"name\": \"octoprint.log.2016-01-07\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-01-07\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-01-07\"\n      }, \n      \"size\": 4661\n    }, \n    {\n      \"date\": 1466871995, \n      \"name\": \"octoprint.log.2016-06-25\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-25\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-25\"\n      }, \n      \"size\": 3922\n    }, \n    {\n      \"date\": 1457028455, \n      \"name\": \"octoprint.log.2016-03-03\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-03\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-03\"\n      }, \n      \"size\": 131\n    }, \n    {\n      \"date\": 1464188895, \n      \"name\": \"octoprint.log.2016-05-25\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-25\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-25\"\n      }, \n      \"size\": 9603\n    }, \n    {\n      \"date\": 1463403811, \n      \"name\": \"octoprint.log.2016-05-16\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-16\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-16\"\n      }, \n      \"size\": 5318\n    }, \n    {\n      \"date\": 1468856189, \n      \"name\": \"octoprint.log.2016-07-18\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-18\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-18\"\n      }, \n      \"size\": 40856\n    }, \n    {\n      \"date\": 1449765091, \n      \"name\": \"octoprint.log.2015-12-10\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-12-10\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-12-10\"\n      }, \n      \"size\": 9699\n    }, \n    {\n      \"date\": 1464634834, \n      \"name\": \"octoprint.log.2016-05-30\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-30\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-30\"\n      }, \n      \"size\": 4623\n    }, \n    {\n      \"date\": 1467960900, \n      \"name\": \"octoprint.log.2016-07-07\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-07\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-07\"\n      }, \n      \"size\": 8934\n    }, \n    {\n      \"date\": 1449161140, \n      \"name\": \"octoprint.log.2015-12-03\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-12-03\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-12-03\"\n      }, \n      \"size\": 7404\n    }, \n    {\n      \"date\": 1461509346, \n      \"name\": \"octoprint.log.2016-04-24\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-24\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-24\"\n      }, \n      \"size\": 5287\n    }, \n    {\n      \"date\": 1455805987, \n      \"name\": \"octoprint.log.2016-02-18\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-02-18\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-02-18\"\n      }, \n      \"size\": 5444\n    }, \n    {\n      \"date\": 1459780076, \n      \"name\": \"octoprint.log.2016-04-04\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-04\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-04\"\n      }, \n      \"size\": 4403\n    }, \n    {\n      \"date\": 1457961905, \n      \"name\": \"octoprint.log.2016-03-13\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-13\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-13\"\n      }, \n      \"size\": 4428\n    }, \n    {\n      \"date\": 1457803483, \n      \"name\": \"octoprint.log.2016-03-11\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-11\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-11\"\n      }, \n      \"size\": 7732\n    }, \n    {\n      \"date\": 1450369885, \n      \"name\": \"octoprint.log.2015-12-17\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-12-17\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-12-17\"\n      }, \n      \"size\": 4761\n    }, \n    {\n      \"date\": 1430955047, \n      \"name\": \"plugin_pluginmanager_console.log\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/plugin_pluginmanager_console.log\", \n        \"resource\": \"http://printer15.local/api/logs/plugin_pluginmanager_console.log\"\n      }, \n      \"size\": 0\n    }, \n    {\n      \"date\": 1462785291, \n      \"name\": \"octoprint.log.2016-05-09\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-09\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-09\"\n      }, \n      \"size\": 7176\n    }, \n    {\n      \"date\": 1456932162, \n      \"name\": \"octoprint.log.2016-03-01\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-01\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-01\"\n      }, \n      \"size\": 2913\n    }, \n    {\n      \"date\": 1451992592, \n      \"name\": \"octoprint.log.2016-01-05\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-01-05\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-01-05\"\n      }, \n      \"size\": 9045\n    }, \n    {\n      \"date\": 1469113274, \n      \"name\": \"octoprint.log.2016-07-20\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-20\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-20\"\n      }, \n      \"size\": 2111\n    }, \n    {\n      \"date\": 1457019789, \n      \"name\": \"octoprint.log.2016-03-02\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-02\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-02\"\n      }, \n      \"size\": 2026\n    }, \n    {\n      \"date\": 1464008932, \n      \"name\": \"octoprint.log.2016-05-23\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-23\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-23\"\n      }, \n      \"size\": 17258\n    }, \n    {\n      \"date\": 1464958946, \n      \"name\": \"octoprint.log.2016-06-02\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-02\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-02\"\n      }, \n      \"size\": 8299\n    }, \n    {\n      \"date\": 1466435897, \n      \"name\": \"octoprint.log.2016-06-20\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-20\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-20\"\n      }, \n      \"size\": 3132\n    }, \n    {\n      \"date\": 1460713237, \n      \"name\": \"octoprint.log.2016-04-15\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-15\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-15\"\n      }, \n      \"size\": 1613\n    }, \n    {\n      \"date\": 1450178418, \n      \"name\": \"octoprint.log.2015-12-15\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-12-15\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-12-15\"\n      }, \n      \"size\": 8050\n    }, \n    {\n      \"date\": 1468601474, \n      \"name\": \"octoprint.log.2016-07-15\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-15\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-15\"\n      }, \n      \"size\": 5512\n    }, \n    {\n      \"date\": 1448817122, \n      \"name\": \"octoprint.log.2015-11-29\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-11-29\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-11-29\"\n      }, \n      \"size\": 3928\n    }, \n    {\n      \"date\": 1456761793, \n      \"name\": \"octoprint.log.2016-02-29\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-02-29\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-02-29\"\n      }, \n      \"size\": 1212\n    }, \n    {\n      \"date\": 1468673024, \n      \"name\": \"octoprint.log.2016-07-16\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-16\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-16\"\n      }, \n      \"size\": 1092\n    }, \n    {\n      \"date\": 1448968659, \n      \"name\": \"octoprint.log.2015-12-01\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-12-01\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-12-01\"\n      }, \n      \"size\": 7411\n    }, \n    {\n      \"date\": 1462357573, \n      \"name\": \"octoprint.log.2016-05-04\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-04\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-04\"\n      }, \n      \"size\": 4022\n    }, \n    {\n      \"date\": 1469458785, \n      \"name\": \"octoprint.log\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log\"\n      }, \n      \"size\": 34987\n    }, \n    {\n      \"date\": 1449571322, \n      \"name\": \"octoprint.log.2015-12-08\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-12-08\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-12-08\"\n      }, \n      \"size\": 14509\n    }, \n    {\n      \"date\": 1460617779, \n      \"name\": \"octoprint.log.2016-04-14\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-14\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-14\"\n      }, \n      \"size\": 1880\n    }, \n    {\n      \"date\": 1430955047, \n      \"name\": \"plugin_cura_engine.log\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/plugin_cura_engine.log\", \n        \"resource\": \"http://printer15.local/api/logs/plugin_cura_engine.log\"\n      }, \n      \"size\": 0\n    }, \n    {\n      \"date\": 1463666797, \n      \"name\": \"octoprint.log.2016-05-18\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-18\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-18\"\n      }, \n      \"size\": 2206\n    }, \n    {\n      \"date\": 1455296267, \n      \"name\": \"octoprint.log.2016-02-12\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-02-12\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-02-12\"\n      }, \n      \"size\": 4609\n    }, \n    {\n      \"date\": 1468249188, \n      \"name\": \"octoprint.log.2016-07-11\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-11\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-11\"\n      }, \n      \"size\": 5406\n    }, \n    {\n      \"date\": 1465579069, \n      \"name\": \"octoprint.log.2016-06-10\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-10\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-10\"\n      }, \n      \"size\": 3852\n    }, \n    {\n      \"date\": 1461182807, \n      \"name\": \"octoprint.log.2016-04-20\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-20\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-20\"\n      }, \n      \"size\": 4621\n    }, \n    {\n      \"date\": 1461046943, \n      \"name\": \"octoprint.log.2016-04-19\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-19\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-19\"\n      }, \n      \"size\": 1812\n    }, \n    {\n      \"date\": 1468478597, \n      \"name\": \"octoprint.log.2016-07-13\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-13\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-13\"\n      }, \n      \"size\": 5814\n    }, \n    {\n      \"date\": 1467126645, \n      \"name\": \"octoprint.log.2016-06-28\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-28\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-28\"\n      }, \n      \"size\": 13567\n    }, \n    {\n      \"date\": 1457527305, \n      \"name\": \"octoprint.log.2016-03-09\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-09\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-09\"\n      }, \n      \"size\": 1092\n    }, \n    {\n      \"date\": 1469116625, \n      \"name\": \"octoprint.log.2016-07-21\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-21\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-21\"\n      }, \n      \"size\": 103\n    }, \n    {\n      \"date\": 1466607225, \n      \"name\": \"octoprint.log.2016-06-21\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-21\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-21\"\n      }, \n      \"size\": 6104\n    }, \n    {\n      \"date\": 1458141527, \n      \"name\": \"octoprint.log.2016-03-16\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-03-16\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-03-16\"\n      }, \n      \"size\": 1221\n    }, \n    {\n      \"date\": 1463735129, \n      \"name\": \"octoprint.log.2016-05-20\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-05-20\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-05-20\"\n      }, \n      \"size\": 1511\n    }, \n    {\n      \"date\": 1468017273, \n      \"name\": \"octoprint.log.2016-07-08\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-08\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-08\"\n      }, \n      \"size\": 726\n    }, \n    {\n      \"date\": 1455552620, \n      \"name\": \"octoprint.log.2016-02-15\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-02-15\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-02-15\"\n      }, \n      \"size\": 6555\n    }, \n    {\n      \"date\": 1467351966, \n      \"name\": \"octoprint.log.2016-07-01\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-01\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-01\"\n      }, \n      \"size\": 1488\n    }, \n    {\n      \"date\": 1469293624, \n      \"name\": \"octoprint.log.2016-07-23\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-07-23\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-07-23\"\n      }, \n      \"size\": 4371\n    }, \n    {\n      \"date\": 1466754065, \n      \"name\": \"octoprint.log.2016-06-24\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-24\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-24\"\n      }, \n      \"size\": 10251\n    }, \n    {\n      \"date\": 1430955240, \n      \"name\": \"octoprint.log.2015-05-06\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2015-05-06\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2015-05-06\"\n      }, \n      \"size\": 7764\n    }, \n    {\n      \"date\": 1460385147, \n      \"name\": \"octoprint.log.2016-04-11\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-04-11\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-04-11\"\n      }, \n      \"size\": 6346\n    }, \n    {\n      \"date\": 1465118151, \n      \"name\": \"octoprint.log.2016-06-05\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/logs/octoprint.log.2016-06-05\", \n        \"resource\": \"http://printer15.local/api/logs/octoprint.log.2016-06-05\"\n      }, \n      \"size\": 1508\n    }\n  ], \n  \"free\": 12721901568\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "17134"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnfEhw.24JHRiUCF_9UqCCVUHPXZgi-AR0; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/logs"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.7.1"
+}
