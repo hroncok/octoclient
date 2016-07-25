@@ -1,5 +1,6 @@
 import time
 import os
+from itertools import chain, combinations
 
 import pytest
 from betamax import Betamax
@@ -15,7 +16,7 @@ with Betamax.configure() as config:
     config.cassette_library_dir = 'tests/fixtures/cassettes'
     record_mode = os.environ.get('RECORD', 'none')
     config.default_cassette_options['record_mode'] = record_mode
-    config.match_options = {'uri', 'method', 'body'}
+    config.match_options = {'uri', 'method', 'body', 'query'}
     Betamax.register_serializer(pretty_json.PrettyJSONSerializer)
     config.default_cassette_options['serialize_with'] = 'prettyjson'
 
@@ -26,6 +27,14 @@ def sleep(seconds):
     '''
     if 'RECORD' in os.environ:
         time.sleep(seconds)
+
+
+def subsets(*items):
+    '''
+    Get all possible subsets of something
+    '''
+    N = len(items)+1
+    return chain(*map(lambda x: combinations(items, x), range(0, N)))
 
 
 @pytest.mark.usefixtures('betamax_session')
@@ -212,3 +221,10 @@ class TestClient:
         assert not printer['state']['flags']['printing']
         assert 'bed' in printer['temperature']
         assert 'tool0' in printer['temperature']
+
+    @pytest.mark.parametrize('exclude', subsets('sd', 'temperature', 'state'))
+    def test_printer_with_excluded_stuff(self, client, exclude):
+        printer = client.printer(exclude=exclude)
+        for key in exclude:
+            assert key not in printer
+        assert len(printer) == 3 - len(exclude)
