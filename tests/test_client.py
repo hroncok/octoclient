@@ -37,6 +37,13 @@ def subsets(*items):
     return chain(*map(lambda x: combinations(items, x), range(0, N)))
 
 
+def zero(component):
+    '''
+    Add a 0 at the end of the component, if it is tool
+    '''
+    return 'tool0' if component == 'tool' else component
+
+
 @pytest.mark.usefixtures('betamax_session')
 @pytest.fixture
 def client(betamax_session):
@@ -240,19 +247,22 @@ class TestClient:
         assert len(printer['temperature']['history']) == limit
 
     @pytest.mark.parametrize('key', ('actual', 'target', 'offset'))
-    def test_tool(self, client, key):
-        tool = client.tool()
-        assert 'history' not in tool
-        assert isinstance(tool['tool0'][key], (float, int))
+    @pytest.mark.parametrize('component', ('tool', 'bed'))
+    def test_tool_and_bed(self, client, key, component):
+        info = getattr(client, component)()  # client.tool() or bed()
+        assert 'history' not in info
+        assert isinstance(info[zero(component)][key], (float, int))
 
     @pytest.mark.parametrize('key', ('actual', 'target'))
-    def test_tool_with_history(self, client, key):
-        tool = client.tool(history=True)
-        assert 'history' in tool
-        for h in tool['history']:
-            assert isinstance(h['tool0'][key], (float, int))
+    @pytest.mark.parametrize('component', ('tool', 'bed'))
+    def test_tool_and_bed_with_history(self, client, key, component):
+        info = getattr(client, component)(history=True)
+        assert 'history' in info
+        for h in info['history']:
+            assert isinstance(h[zero(component)][key], (float, int))
 
     @pytest.mark.parametrize('limit', range(1, 4))
-    def test_tool_with_history_and_limit(self, client, limit):
-        tool = client.tool(history=True, limit=limit)
-        assert len(tool['history']) == limit
+    @pytest.mark.parametrize('component', ('tool', 'bed'))
+    def test_tool_and_bed_with_history_limit(self, client, limit, component):
+        info = getattr(client, component)(history=True, limit=limit)
+        assert len(info['history']) == limit

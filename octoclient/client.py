@@ -356,3 +356,16 @@ class OctoClient:
         '''
         return self._hwinfo('/api/printer/tool',
                             history=history, limit=limit)
+
+    def bed(self, *, history=False, limit=None):
+        '''
+        Retrieves the current temperature data (actual, target and offset) plus
+        optionally a (limited) history (actual, target, timestamp) for the
+        printer's heated bed.
+
+        It's also possible to retrieve the temperature history by setting the
+        history argument. The amount of returned history data points can be
+        limited using the limit argument.
+        '''
+        return self._hwinfo('/api/printer/bed',
+                            history=history, limit=limit)
