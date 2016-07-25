@@ -3,6 +3,7 @@ import os
 
 import pytest
 from betamax import Betamax
+from betamax_serializers import pretty_json
 
 from octoclient import OctoClient
 
@@ -15,6 +16,8 @@ with Betamax.configure() as config:
     record_mode = os.environ.get('RECORD', 'none')
     config.default_cassette_options['record_mode'] = record_mode
     config.match_options = {'uri', 'method', 'body'}
+    Betamax.register_serializer(pretty_json.PrettyJSONSerializer)
+    config.default_cassette_options['serialize_with'] = 'prettyjson'
 
 
 def sleep(seconds):
@@ -101,8 +104,9 @@ class TestClient:
         f = client.upload(gcode.path, print=True)
         assert f['done']
         assert f['files']['local']['name'] == gcode.filename
-        # TODO check that the file got selected and is printed
-        # TODO wait for finish
+        # TODO check that the file got selected
+        assert client.state() == 'Printing'
+        sleep(5)
         client.delete(gcode.filename)
 
     def test_upload_and_select_one_by_one(self, client, gcode):
@@ -114,8 +118,9 @@ class TestClient:
     def test_upload_and_print_one_by_one(self, client, gcode):
         client.upload(gcode.path)
         client.select(gcode.filename, print=True)
-        # TODO check that the file got selected and is printed
-        # TODO wait for finish
+        # TODO check that the file got selected
+        assert client.state() == 'Printing'
+        sleep(5)
         client.delete(gcode.filename)
 
     def test_connection_info(self, client):
@@ -130,13 +135,18 @@ class TestClient:
         assert 'baudrates' in info['options']
         assert 'ports' in info['options']
 
-    def test_connect_and_disconnect(self, client):
+    def test_disconnect(self, client):
         client.disconnect()
+        assert client.state() in ['Offline', 'Closed']
+
+    def test_connect(self, client):
+        '''
+        Since it's hard with betamax fixture to check state() multiple times
+        in one test, this test hopes test_disconnect() was called before it.
+        It is not possible to run it without it in record mode.
+        TODO Fix this
+        '''
         client.connect()
         assert client.state() in ['Connecting',
                                   'Operational',
                                   'Opening serial port']
-        sleep(5)
-        assert client.state() == 'Operational'
-        client.disconnect()
-        assert client.state() in ['Offline', 'Closed']

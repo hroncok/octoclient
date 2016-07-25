@@ -1,1 +1,120 @@
-{"http_interactions": [{"recorded_at": "2016-07-25T13:00:10", "response": {"status": {"code": 200, "message": "OK"}, "body": {"encoding": null, "string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.2\"\n}"}, "headers": {"Content-Length": ["40"], "Content-Type": ["application/json"], "Set-Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cnee2g.guXnQZt4WE2fg-mE7Rm1xe_qJGw; Path=/; HttpOnly"], "X-Clacks-Overhead": ["GNU Terry Pratchett"], "Server": ["TornadoServer/4.0.1"]}, "url": "http://printer15.local/api/version"}, "request": {"uri": "http://printer15.local/api/version", "body": {"encoding": "utf-8", "string": ""}, "method": "GET", "headers": {"User-Agent": ["python-requests/2.10.0"], "Accept": ["*/*"], "Connection": ["keep-alive"], "X-Api-Key": ["YouShallNotPass"], "Accept-Encoding": ["gzip, deflate"]}}}, {"recorded_at": "2016-07-25T13:00:10", "response": {"status": {"code": 200, "message": "OK"}, "body": {"encoding": null, "string": "{\n  \"current\": {\n    \"baudrate\": 115200, \n    \"port\": \"/dev/ttyACM0\", \n    \"printerProfile\": \"_default\", \n    \"state\": \"Operational\"\n  }, \n  \"options\": {\n    \"baudratePreference\": 115200, \n    \"baudrates\": [\n      115200, \n      250000, \n      230400, \n      57600, \n      38400, \n      19200, \n      9600\n    ], \n    \"portPreference\": \"/dev/ttyACM0\", \n    \"ports\": [\n      \"/dev/ttyACM0\"\n    ], \n    \"printerProfilePreference\": \"_default\", \n    \"printerProfiles\": [\n      {\n        \"id\": \"_default\", \n        \"name\": \"Default\"\n      }\n    ]\n  }\n}"}, "headers": {"Content-Length": ["547"], "Content-Type": ["application/json"], "Set-Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cnee2g.guXnQZt4WE2fg-mE7Rm1xe_qJGw; Path=/; HttpOnly"], "X-Clacks-Overhead": ["GNU Terry Pratchett"], "Server": ["TornadoServer/4.0.1"]}, "url": "http://printer15.local/api/connection"}, "request": {"uri": "http://printer15.local/api/connection", "body": {"encoding": "utf-8", "string": ""}, "method": "GET", "headers": {"User-Agent": ["python-requests/2.10.0"], "Connection": ["keep-alive"], "X-Api-Key": ["YouShallNotPass"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.Cnee2g.guXnQZt4WE2fg-mE7Rm1xe_qJGw"]}}}], "recorded_with": "betamax/0.7.1"}
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2016-07-25T14:01:54",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/version"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.2\"\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "40"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetUg.I8LCvGIeN6LtifggZbPYX7IVeDM; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/version"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:01:54",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetUg.I8LCvGIeN6LtifggZbPYX7IVeDM"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/connection"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"current\": {\n    \"baudrate\": 115200, \n    \"port\": \"/dev/ttyACM0\", \n    \"printerProfile\": \"_default\", \n    \"state\": \"Operational\"\n  }, \n  \"options\": {\n    \"baudratePreference\": 115200, \n    \"baudrates\": [\n      115200, \n      250000, \n      230400, \n      57600, \n      38400, \n      19200, \n      9600\n    ], \n    \"portPreference\": \"/dev/ttyACM0\", \n    \"ports\": [\n      \"/dev/ttyACM0\"\n    ], \n    \"printerProfilePreference\": \"_default\", \n    \"printerProfiles\": [\n      {\n        \"id\": \"_default\", \n        \"name\": \"Default\"\n      }\n    ]\n  }\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "547"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetUg.I8LCvGIeN6LtifggZbPYX7IVeDM; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/connection"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.7.1"
+}

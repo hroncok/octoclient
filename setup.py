@@ -14,7 +14,7 @@ setup(
     packages=[p for p in find_packages() if p != 'tests'],
     install_requires=['requests'],
     setup_requires=['pytest-runner'],
-    tests_require=['pytest', 'betamax'],
+    tests_require=['pytest', 'betamax', 'betamax-serializers'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',

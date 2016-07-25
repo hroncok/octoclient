@@ -1,1 +1,321 @@
-{"http_interactions": [{"request": {"body": {"string": "", "encoding": "utf-8"}, "uri": "http://printer15.local/api/version", "headers": {"User-Agent": ["python-requests/2.10.0"], "Accept": ["*/*"], "X-Api-Key": ["YouShallNotPass"], "Accept-Encoding": ["gzip, deflate"], "Connection": ["keep-alive"]}, "method": "GET"}, "response": {"body": {"string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.2\"\n}", "encoding": null}, "status": {"code": 200, "message": "OK"}, "headers": {"Content-Length": ["40"], "X-Clacks-Overhead": ["GNU Terry Pratchett"], "Content-Type": ["application/json"], "Server": ["TornadoServer/4.0.1"], "Set-Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMlg.6boZk96Cehy_lrEUuHpFiqmWbrE; Path=/; HttpOnly"]}, "url": "http://printer15.local/api/version"}, "recorded_at": "2016-07-25T11:42:14"}, {"request": {"body": {"string": "--0b0e770fa4444aaca3293bee655bb965\r\nContent-Disposition: form-data; name=\"print\"\r\n\r\nfalse\r\n--0b0e770fa4444aaca3293bee655bb965\r\nContent-Disposition: form-data; name=\"select\"\r\n\r\nfalse\r\n--0b0e770fa4444aaca3293bee655bb965\r\nContent-Disposition: form-data; name=\"file\"; filename=\"homex.gcode\"\r\nContent-Type: application/octet-stream\r\n\r\nG28 X\n\r\n--0b0e770fa4444aaca3293bee655bb965--\r\n", "encoding": "utf-8"}, "uri": "http://printer15.local/api/files/local", "headers": {"Connection": ["keep-alive"], "Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMlg.6boZk96Cehy_lrEUuHpFiqmWbrE"], "Content-Length": ["376"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.10.0"], "Content-Type": ["multipart/form-data; boundary=0b0e770fa4444aaca3293bee655bb965"], "X-Api-Key": ["YouShallNotPass"], "Accept-Encoding": ["gzip, deflate"]}, "method": "POST"}, "response": {"body": {"string": "{\n  \"done\": true, \n  \"files\": {\n    \"local\": {\n      \"name\": \"homex.gcode\", \n      \"origin\": \"local\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/files/local/homex.gcode\", \n        \"resource\": \"http://printer15.local/api/files/local/homex.gcode\"\n      }\n    }\n  }\n}", "encoding": null}, "status": {"code": 201, "message": "CREATED"}, "headers": {"Content-Length": ["292"], "Location": ["http://printer15.local/api/files/local/homex.gcode"], "Content-Type": ["application/json"], "Server": ["TornadoServer/4.0.1"], "X-Clacks-Overhead": ["GNU Terry Pratchett"], "Cache-Control": ["no-cache"], "Set-Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMmg.Z5t5gagqiG5JVZJewtPjmYr2ggo; Path=/; HttpOnly"]}, "url": "http://printer15.local/api/files/local"}, "recorded_at": "2016-07-25T11:42:18"}, {"request": {"body": {"string": "{\"print\": true, \"command\": \"select\"}", "encoding": "utf-8"}, "uri": "http://printer15.local/api/files/local/homex.gcode", "headers": {"Connection": ["keep-alive"], "Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMmg.Z5t5gagqiG5JVZJewtPjmYr2ggo"], "Content-Length": ["36"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.10.0"], "Content-Type": ["application/json"], "X-Api-Key": ["YouShallNotPass"], "Accept-Encoding": ["gzip, deflate"]}, "method": "POST"}, "response": {"body": {"string": "", "encoding": "utf-8"}, "status": {"code": 204, "message": "NO CONTENT"}, "headers": {"Content-Length": ["0"], "X-Clacks-Overhead": ["GNU Terry Pratchett"], "Content-Type": ["text/html; charset=utf-8"], "Server": ["TornadoServer/4.0.1"], "Cache-Control": ["no-cache"], "Set-Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMmw.RnoItO6RLBGbS3EYxWZmalGsxyY; Path=/; HttpOnly"]}, "url": "http://printer15.local/api/files/local/homex.gcode"}, "recorded_at": "2016-07-25T11:42:19"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "uri": "http://printer15.local/api/files/local/homex.gcode", "headers": {"Connection": ["keep-alive"], "Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMmw.RnoItO6RLBGbS3EYxWZmalGsxyY"], "Content-Length": ["0"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.10.0"], "X-Api-Key": ["YouShallNotPass"], "Accept-Encoding": ["gzip, deflate"]}, "method": "DELETE"}, "response": {"body": {"string": "", "encoding": "utf-8"}, "status": {"code": 204, "message": "NO CONTENT"}, "headers": {"Content-Length": ["0"], "X-Clacks-Overhead": ["GNU Terry Pratchett"], "Content-Type": ["text/html; charset=utf-8"], "Server": ["TornadoServer/4.0.1"], "Set-Cookie": ["session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CneMow.JVGBLcO78HLFfuo2dRpG-iWigeM; Path=/; HttpOnly"]}, "url": "http://printer15.local/api/files/local/homex.gcode"}, "recorded_at": "2016-07-25T11:42:27"}], "recorded_with": "betamax/0.7.1"}
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2016-07-25T14:01:38",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/version"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.2\"\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "40"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetQg.Ma7CYf1gPfZnW_KzZ3z4YVtp3Rs; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/version"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:01:41",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "--b20bd9d67029422da3597be0f2e45765\r\nContent-Disposition: form-data; name=\"print\"\r\n\r\nfalse\r\n--b20bd9d67029422da3597be0f2e45765\r\nContent-Disposition: form-data; name=\"select\"\r\n\r\nfalse\r\n--b20bd9d67029422da3597be0f2e45765\r\nContent-Disposition: form-data; name=\"file\"; filename=\"homex.gcode\"\r\nContent-Type: application/octet-stream\r\n\r\nG28 X\n\r\n--b20bd9d67029422da3597be0f2e45765--\r\n"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "376"
+          ],
+          "Content-Type": [
+            "multipart/form-data; boundary=b20bd9d67029422da3597be0f2e45765"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetQg.Ma7CYf1gPfZnW_KzZ3z4YVtp3Rs"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://printer15.local/api/files/local"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"done\": true, \n  \"files\": {\n    \"local\": {\n      \"name\": \"homex.gcode\", \n      \"origin\": \"local\", \n      \"refs\": {\n        \"download\": \"http://printer15.local/downloads/files/local/homex.gcode\", \n        \"resource\": \"http://printer15.local/api/files/local/homex.gcode\"\n      }\n    }\n  }\n}"
+        },
+        "headers": {
+          "Cache-Control": [
+            "no-cache"
+          ],
+          "Content-Length": [
+            "292"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Location": [
+            "http://printer15.local/api/files/local/homex.gcode"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRQ.idPgqQDlLBh0BnBp2MbYkW8bah4; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "CREATED"
+        },
+        "url": "http://printer15.local/api/files/local"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:01:43",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"command\": \"select\", \"print\": true}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "36"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRQ.idPgqQDlLBh0BnBp2MbYkW8bah4"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://printer15.local/api/files/local/homex.gcode"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Cache-Control": [
+            "no-cache"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "Content-Type": [
+            "text/html; charset=utf-8"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRw.Na7AQY3SdP1kF-FTOhr0LYvQEHw; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "NO CONTENT"
+        },
+        "url": "http://printer15.local/api/files/local/homex.gcode"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:01:44",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetRw.Na7AQY3SdP1kF-FTOhr0LYvQEHw"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/connection"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"current\": {\n    \"baudrate\": 115200, \n    \"port\": \"/dev/ttyACM0\", \n    \"printerProfile\": \"_default\", \n    \"state\": \"Printing\"\n  }, \n  \"options\": {\n    \"baudratePreference\": 115200, \n    \"baudrates\": [\n      115200, \n      250000, \n      230400, \n      57600, \n      38400, \n      19200, \n      9600\n    ], \n    \"portPreference\": \"/dev/ttyACM0\", \n    \"ports\": [\n      \"/dev/ttyACM0\"\n    ], \n    \"printerProfilePreference\": \"_default\", \n    \"printerProfiles\": [\n      {\n        \"id\": \"_default\", \n        \"name\": \"Default\"\n      }\n    ]\n  }\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "544"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetSA.xQIYCeEB4WFo24Zmgs-IVZhB5TQ; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/connection"
+      }
+    },
+    {
+      "recorded_at": "2016-07-25T14:01:53",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetSA.xQIYCeEB4WFo24Zmgs-IVZhB5TQ"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "http://printer15.local/api/files/local/homex.gcode"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Content-Length": [
+            "0"
+          ],
+          "Content-Type": [
+            "text/html; charset=utf-8"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.CnetUQ.wvoGTsU-ZBJJE9ibmSDEsfEFShU; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "NO CONTENT"
+        },
+        "url": "http://printer15.local/api/files/local/homex.gcode"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.7.1"
+}
