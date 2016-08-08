@@ -370,6 +370,18 @@ class OctoClient:
         return self._hwinfo('/api/printer/bed',
                             history=history, limit=limit)
 
+    def home(self, axes=None):
+        '''
+        Homes the print head in all of the given axes.
+        Additional parameters are:
+
+        axes: A list of axes which to home, valid values are one or more of
+        'x', 'y', 'z'. Defaults to all.
+        '''
+        axes = [a.lower()[:1] for a in axes] if axes else ['x', 'y', 'z']
+        data = {'command': 'home', 'axes': axes}
+        self._post('/api/printer/printhead', json=data, ret=False)
+
     def jog(self, x=None, y=None, z=None):
         '''
         Jogs the print head (relatively) by a defined amount in one or more
@@ -391,16 +403,4 @@ class OctoClient:
             data['y'] = y
         if z:
             data['z'] = z
-        self._post('/api/printer/printhead', json=data, ret=False)
-
-    def home(self, axes=None):
-        '''
-        Homes the print head in all of the given axes.
-        Additional parameters are:
-
-        axes: A list of axes which to home, valid values are one or more of
-        'x', 'y', 'z'. Defaults to all.
-        '''
-        axes = [a.lower()[:1] for a in axes] if axes else ['x', 'y', 'z']
-        data = {'command': 'home', 'axes': axes}
         self._post('/api/printer/printhead', json=data, ret=False)

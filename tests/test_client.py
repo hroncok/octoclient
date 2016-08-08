@@ -267,11 +267,6 @@ class TestClient:
         info = getattr(client, component)(history=True, limit=limit)
         assert len(info['history']) == limit
 
-    @pytest.mark.parametrize('coordinates', ((20, 0, 0), (0, 20, 0)))
-    def test_jog(self, client, coordinates):
-        # we are only testing if no exception occurred, there's no return
-        client.jog(*coordinates)
-
     def test_home_all(self, client):
         # we are only testing if no exception occurred, there's no return
         client.home()
@@ -280,3 +275,8 @@ class TestClient:
     def test_home_some(self, client, axes):
         # we are only testing if no exception occurred, there's no return
         client.home(axes)
+
+    @pytest.mark.parametrize('coordinates', ((20, 0, 0), (0, 20, 0)))
+    def test_jog(self, client, coordinates):
+        # we are only testing if no exception occurred, there's no return
+        client.jog(*coordinates)
