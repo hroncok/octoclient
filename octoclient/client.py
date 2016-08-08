@@ -500,3 +500,21 @@ class OctoClient:
         '''
         data = {'command': 'flowrate', 'factor': factor}
         self._post('/api/printer/tool', json=data, ret=False)
+
+    def bed_target(self, target):
+        '''
+        Sets the given target temperature on the printer's bed.
+
+        target: Target temperature to set.
+        '''
+        data = {'command': 'target', 'target': target}
+        self._post('/api/printer/bed', json=data, ret=False)
+
+    def bed_offset(self, offset):
+        '''
+        Sets the given temperature offset on the printer's bed.
+
+        offset: Temperature offset to set.
+        '''
+        data = {'command': 'offset', 'offset': offset}
+        self._post('/api/printer/bed', json=data, ret=False)

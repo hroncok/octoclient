@@ -324,3 +324,17 @@ class TestClient:
     def test_flowrate(self, client, factor):
         # we are only testing if no exception occurred, there's no return
         client.flowrate(factor)
+
+    def test_set_bed_temperature_to_100(self, client):
+        client.bed_target(100)
+        bed = client.bed()
+        assert bed['bed']['target'] == 100.0
+        if 'RECORD' in os.environ:
+            client.bed_target(0)
+
+    def test_set_bed_offset_to_10(self, client):
+        client.bed_offset(10)
+        bed = client.bed()
+        assert bed['bed']['offset'] == 10.0
+        if 'RECORD' in os.environ:
+            client.bed_offset(0)
