@@ -518,3 +518,36 @@ class OctoClient:
         '''
         data = {'command': 'offset', 'offset': offset}
         self._post('/api/printer/bed', json=data, ret=False)
+
+    def sd_init(self):
+        '''
+        Initializes the printer's SD card, making it available for use.
+        This also includes an initial retrieval of the list of files currently
+        stored on the SD card, so after issuing files(location=sd) a retrieval
+        of the files on SD card will return a successful result.
+
+        If OctoPrint detects the availability of a SD card on the printer
+        during connection, it will automatically attempt to initialize it.
+        '''
+        data = {'command': 'init'}
+        self._post('/api/printer/sd', json=data, ret=False)
+
+    def sd_refresh(self):
+        '''
+        Refreshes the list of files stored on the printer''s SD card.
+        Will raise a 409 Conflict if the card has not been initialized yet
+        with sd_init().
+        '''
+        data = {'command': 'refresh'}
+        self._post('/api/printer/sd', json=data, ret=False)
+
+    def sd_release(self):
+        '''
+        Releases the SD card from the printer. The reverse operation to init.
+        After issuing this command, the SD card won't be available anymore,
+        hence and operations targeting files stored on it will fail.
+        Will raise a 409 Conflict if the card has not been initialized yet
+        with sd_init().
+        '''
+        data = {'command': 'release'}
+        self._post('/api/printer/sd', json=data, ret=False)

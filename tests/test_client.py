@@ -338,3 +338,12 @@ class TestClient:
         assert bed['bed']['offset'] == 10.0
         if 'RECORD' in os.environ:
             client.bed_offset(0)
+
+    def test_sd_card_init(self, client):
+        client.sd_init()
+
+    def test_sd_card_refresh(self, client):
+        client.sd_refresh()
+
+    def test_sd_card_release(self, client):
+        client.sd_release()
