@@ -440,3 +440,17 @@ class OctoClient:
         targets = self._tool_dict(targets)
         data = {'command': 'target', 'targets': targets}
         self._post('/api/printer/tool', json=data, ret=False)
+
+    def tool_offset(self, offsets):
+        '''
+        Sets the given temperature offset on the printer's tools.
+        Additional parameters:
+
+        offsets: Offset(s) to set.
+        Can be one number (for tool0), list of numbers or dict, where keys
+        must match the format tool{n} with n being the tool's index starting
+        with 0.
+        '''
+        offsets = self._tool_dict(offsets)
+        data = {'command': 'offset', 'offsets': offsets}
+        self._post('/api/printer/tool', json=data, ret=False)

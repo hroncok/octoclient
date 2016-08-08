@@ -298,3 +298,12 @@ class TestClient:
             # Betamax had some problems here
             # And we don't do this for testing, but only with actual printer
             client.tool_target(0)
+
+    @pytest.mark.parametrize('how', (20, [20], {'tool0': 20}))
+    def test_set_tool_offset_to_20(self, client, how):
+        client.tool_offset(how)
+        # tool = client.tool()
+        # assert tool['tool0']['offset'] == 20.0
+        # TODO make the above assert work?
+        if 'RECORD' in os.environ:
+            client.tool_offset(0)
