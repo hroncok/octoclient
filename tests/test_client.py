@@ -280,3 +280,8 @@ class TestClient:
     def test_jog(self, client, coordinates):
         # we are only testing if no exception occurred, there's no return
         client.jog(*coordinates)
+
+    @pytest.mark.parametrize('factor', (100, 50, 150, 0.5, 1.0))
+    def test_feedrate(self, client, factor):
+        # we are only testing if no exception occurred, there's no return
+        client.feedrate(factor)

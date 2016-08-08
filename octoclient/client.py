@@ -404,3 +404,13 @@ class OctoClient:
         if z:
             data['z'] = z
         self._post('/api/printer/printhead', json=data, ret=False)
+
+    def feedrate(self, factor):
+        '''
+        Changes the feedrate factor to apply to the movement's of the axes.
+
+        factor: The new factor, percentage as integer or float (percentage
+        divided by 100) between 50 and 200%.
+        '''
+        data = {'command': 'feedrate', 'factor': factor}
+        self._post('/api/printer/printhead', json=data, ret=False)

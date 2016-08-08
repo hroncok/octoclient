@@ -1,0 +1,129 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2016-08-08T09:44:32",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/version"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.2\"\n}"
+        },
+        "headers": {
+          "Content-Length": [
+            "40"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.ConmAA.10TXH7hc5Ca0oQbWSaJ-jJPIiBs; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/version"
+      }
+    },
+    {
+      "recorded_at": "2016-08-08T09:44:32",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"command\": \"feedrate\", \"factor\": 1.0}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "38"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.ConmAA.10TXH7hc5Ca0oQbWSaJ-jJPIiBs"
+          ],
+          "User-Agent": [
+            "python-requests/2.10.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://printer15.local/api/printer/printhead"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Cache-Control": [
+            "no-cache"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "Content-Type": [
+            "text/html; charset=utf-8"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJSigpJNvRziTT1DY_K9XPxy_ELca30dXHLigoJyvHLysiOCvc18jUKNYoMcbRVqtVRykxJzSvJLKnUSywtyYgvqSxIVbLKK83JQZJBMj3CyK08MdAWrLO0OLUoHqtcLQB_4zOk.ConmAA.10TXH7hc5Ca0oQbWSaJ-jJPIiBs; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "NO CONTENT"
+        },
+        "url": "http://printer15.local/api/printer/printhead"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.7.1"
+}
