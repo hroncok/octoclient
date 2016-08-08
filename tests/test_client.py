@@ -319,3 +319,8 @@ class TestClient:
     def test_retracting(self, client):
         # we are only testing if no exception occurred, there's no return
         client.retract(1)
+
+    @pytest.mark.parametrize('factor', (100, 75, 125, 0.75, 1.0))
+    def test_flowrate(self, client, factor):
+        # we are only testing if no exception occurred, there's no return
+        client.flowrate(factor)

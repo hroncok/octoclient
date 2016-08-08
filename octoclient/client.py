@@ -490,3 +490,13 @@ class OctoClient:
         May be negative to extrude.
         '''
         self.extrude(-amount)
+
+    def flowrate(self, factor):
+        '''
+        Changes the flow rate factor to apply to extrusion of the tool.
+
+        factor: The new factor, percentage as integer or float
+        (percentage divided by 100) between 75 and 125%.
+        '''
+        data = {'command': 'flowrate', 'factor': factor}
+        self._post('/api/printer/tool', json=data, ret=False)
