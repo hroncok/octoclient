@@ -551,3 +551,12 @@ class OctoClient:
         '''
         data = {'command': 'release'}
         self._post('/api/printer/sd', json=data, ret=False)
+
+    def sd(self):
+        '''
+        Retrieves the current state of the printer's SD card.
+
+        If SD support has been disabled in OctoPrint's settings,
+        a 404 Not Found is risen.
+        '''
+        return self._get('/api/printer/sd')

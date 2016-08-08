@@ -347,3 +347,8 @@ class TestClient:
 
     def test_sd_card_release(self, client):
         client.sd_release()
+
+    def test_sd_card_status(self, client):
+        sd = client.sd()
+        # no SD card here, so always not ready
+        assert sd['ready'] is False
