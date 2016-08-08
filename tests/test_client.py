@@ -271,3 +271,12 @@ class TestClient:
     def test_jog(self, client, coordinates):
         # we are only testing if no exception occurred, there's no return
         client.jog(*coordinates)
+
+    def test_home_all(self, client):
+        # we are only testing if no exception occurred, there's no return
+        client.home()
+
+    @pytest.mark.parametrize('axes', (('x',), ('y',), ('z',), ('x', 'y',)))
+    def test_home_some(self, client, axes):
+        # we are only testing if no exception occurred, there's no return
+        client.home(axes)
