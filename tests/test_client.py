@@ -352,3 +352,12 @@ class TestClient:
         sd = client.sd()
         # no SD card here, so always not ready
         assert sd['ready'] is False
+
+    def test_single_gcode_command(self, client):
+        client.gcode('G28 X')
+
+    def test_multiple_gcode_commands_nl(self, client):
+        client.gcode('G28 X\nG28 Y')
+
+    def test_multiple_gcode_commands_list(self, client):
+        client.gcode(['G28 X', 'G28 Y'])

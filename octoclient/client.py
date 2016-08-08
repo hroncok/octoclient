@@ -560,3 +560,20 @@ class OctoClient:
         a 404 Not Found is risen.
         '''
         return self._get('/api/printer/sd')
+
+    def gcode(self, command):
+        '''
+        Sends any command to the printer via the serial interface.
+        Should be used with some care as some commands can interfere with or
+        even stop a running print job.
+
+        command: A single string command or command separated by newlines
+        or a list of commands
+        '''
+        try:
+            commands = command.split('\n')
+        except AttributeError:
+            # already an iterable
+            commands = list(command)
+        data = {'commands': commands}
+        self._post('/api/printer/command', json=data, ret=False)
