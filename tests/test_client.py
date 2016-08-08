@@ -16,7 +16,10 @@ with Betamax.configure() as config:
     config.cassette_library_dir = 'tests/fixtures/cassettes'
     record_mode = os.environ.get('RECORD', 'none')
     config.default_cassette_options['record_mode'] = record_mode
-    config.match_options = {'uri', 'method', 'body', 'query'}
+    config.default_cassette_options['match_requests_on'] = {
+        'uri',
+        'method',
+    }
     Betamax.register_serializer(pretty_json.PrettyJSONSerializer)
     config.default_cassette_options['serialize_with'] = 'prettyjson'
 
@@ -285,3 +288,13 @@ class TestClient:
     def test_feedrate(self, client, factor):
         # we are only testing if no exception occurred, there's no return
         client.feedrate(factor)
+
+    @pytest.mark.parametrize('how', (200, [200], {'tool0': 200}))
+    def test_set_tool_temperature_to_200(self, client, how):
+        client.tool_target(how)
+        tool = client.tool()
+        assert tool['tool0']['target'] == 200.0
+        if 'RECORD' in os.environ:
+            # Betamax had some problems here
+            # And we don't do this for testing, but only with actual printer
+            client.tool_target(0)

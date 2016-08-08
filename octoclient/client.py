@@ -414,3 +414,29 @@ class OctoClient:
         '''
         data = {'command': 'feedrate', 'factor': factor}
         self._post('/api/printer/printhead', json=data, ret=False)
+
+    @classmethod
+    def _tool_dict(cls, whatever):
+        if isinstance(whatever, (int, float)):
+            whatever = (whatever,)
+        if isinstance(whatever, dict):
+            ret = whatever
+        else:
+            ret = {}
+            for n, thing in enumerate(whatever):
+                ret['tool{}'.format(n)] = thing
+        return ret
+
+    def tool_target(self, targets):
+        '''
+        Sets the given target temperature on the printer's tools.
+        Additional parameters:
+
+        targets: Target temperature(s) to set.
+        Can be one number (for tool0), list of numbers or dict, where keys
+        must match the format tool{n} with n being the tool's index starting
+        with 0.
+        '''
+        targets = self._tool_dict(targets)
+        data = {'command': 'target', 'targets': targets}
+        self._post('/api/printer/tool', json=data, ret=False)
