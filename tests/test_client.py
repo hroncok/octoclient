@@ -307,3 +307,7 @@ class TestClient:
         # TODO make the above assert work?
         if 'RECORD' in os.environ:
             client.tool_offset(0)
+
+    def test_selecting_tool(self, client):
+        # we are only testing if no exception occurred, there's no return
+        client.tool_select(0)

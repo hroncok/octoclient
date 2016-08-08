@@ -454,3 +454,16 @@ class OctoClient:
         offsets = self._tool_dict(offsets)
         data = {'command': 'offset', 'offsets': offsets}
         self._post('/api/printer/tool', json=data, ret=False)
+
+    def tool_select(self, tool):
+        '''
+        Selects the printer's current tool.
+        Additional parameters:
+
+        tool: Tool to select, format tool{n} with n being the tool's index
+        starting with 0. Or integer.
+        '''
+        if isinstance(tool, int):
+            tool = 'tool{}'.format(tool)
+        data = {'command': 'select', 'tool': tool}
+        self._post('/api/printer/tool', json=data, ret=False)
