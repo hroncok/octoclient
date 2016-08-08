@@ -266,3 +266,8 @@ class TestClient:
     def test_tool_and_bed_with_history_limit(self, client, limit, component):
         info = getattr(client, component)(history=True, limit=limit)
         assert len(info['history']) == limit
+
+    @pytest.mark.parametrize('coordinates', ((20, 0, 0), (0, 20, 0)))
+    def test_jog(self, client, coordinates):
+        # we are only testing if no exception occurred, there's no return
+        client.jog(*coordinates)

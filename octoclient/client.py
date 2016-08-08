@@ -369,3 +369,26 @@ class OctoClient:
         '''
         return self._hwinfo('/api/printer/bed',
                             history=history, limit=limit)
+
+    def jog(self, x=None, y=None, z=None):
+        '''
+        Jogs the print head (relatively) by a defined amount in one or more
+        axes. Additional parameters are:
+
+        x: Optional. Amount to jog print head on x axis, must be a valid
+        number corresponding to the distance to travel in mm.
+
+        y: Optional. Amount to jog print head on y axis, must be a valid
+        number corresponding to the distance to travel in mm.
+
+        z: Optional. Amount to jog print head on z axis, must be a valid
+        number corresponding to the distance to travel in mm.
+        '''
+        data = {'command': 'jog'}
+        if x:
+            data['x'] = x
+        if y:
+            data['y'] = y
+        if z:
+            data['z'] = z
+        self._post('/api/printer/printhead', json=data, ret=False)
