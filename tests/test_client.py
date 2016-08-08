@@ -311,3 +311,11 @@ class TestClient:
     def test_selecting_tool(self, client):
         # we are only testing if no exception occurred, there's no return
         client.tool_select(0)
+
+    def test_extruding(self, client):
+        # we are only testing if no exception occurred, there's no return
+        client.extrude(1)
+
+    def test_retracting(self, client):
+        # we are only testing if no exception occurred, there's no return
+        client.retract(1)

@@ -467,3 +467,26 @@ class OctoClient:
             tool = 'tool{}'.format(tool)
         data = {'command': 'select', 'tool': tool}
         self._post('/api/printer/tool', json=data, ret=False)
+
+    def extrude(self, amount):
+        '''
+        Extrudes the given amount of filament from the currently selected tool
+
+        Additional parameters:
+
+        amount: The amount of filament to extrude in mm.
+        May be negative to retract.
+        '''
+        data = {'command': 'extrude', 'amount': amount}
+        self._post('/api/printer/tool', json=data, ret=False)
+
+    def retract(self, amount):
+        '''
+        Retracts the given amount of filament from the currently selected tool
+
+        Additional parameters:
+
+        amount: The amount of filament to retract in mm.
+        May be negative to extrude.
+        '''
+        self.extrude(-amount)
