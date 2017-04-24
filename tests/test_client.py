@@ -361,3 +361,22 @@ class TestClient:
 
     def test_multiple_gcode_commands_list(self, client):
         client.gcode(['G28 X', 'G28 Y'])
+
+    def test_get_settings(self, client):
+        settings = client.settings()
+        assert 'api' in settings
+        assert settings['api']['enabled'] is True
+
+    def test_unchanged_settings(self, client):
+        settings = client.settings()
+        new_settings = client.settings({})
+        print(new_settings)
+        assert settings['api']['enabled'] == new_settings['api']['enabled']
+
+    def test_change_settings(self, client):
+        settings = client.settings()
+        printer_name = settings['appearance']['name']
+        test_name = {'appearance': {'name': 'Test'}}
+        new_settings = client.settings(test_name)
+        assert new_settings['appearance']['name'] == "Test"
+        client.settings({'appearance': {'name': printer_name}})

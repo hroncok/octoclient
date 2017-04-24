@@ -1,0 +1,286 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-04-24T13:27:14",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.13.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/version"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": \"0.1\", \n  \"server\": \"1.2.10\"\n}"
+        },
+        "headers": {
+          "Cache-Control": [
+            "no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0"
+          ],
+          "Content-Length": [
+            "41"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Expires": [
+            "-1"
+          ],
+          "Pragma": [
+            "no-cache"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNMjjNzKEwNtwTpLi1OL4rHK1QIAU6EzZA.C9-Osg.CYEc5VC69OiyMaP-i7MYyBpYkrg; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/version"
+      }
+    },
+    {
+      "recorded_at": "2017-04-24T13:27:14",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNMjjNzKEwNtwTpLi1OL4rHK1QIAU6EzZA.C9-Osg.CYEc5VC69OiyMaP-i7MYyBpYkrg"
+          ],
+          "User-Agent": [
+            "python-requests/2.13.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/api/settings"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": {\n    \"allowCrossOrigin\": false, \n    \"enabled\": true, \n    \"key\": \"YouShallNotPass\"\n  }, \n  \"appearance\": {\n    \"color\": \"default\", \n    \"colorTransparent\": false, \n    \"defaultLanguage\": \"_default\", \n    \"name\": \"\"\n  }, \n  \"feature\": {\n    \"alwaysSendChecksum\": false, \n    \"externalHeatupDetection\": true, \n    \"gcodeViewer\": true, \n    \"ignoreIdenticalResends\": false, \n    \"keyboardControl\": true, \n    \"pollWatched\": false, \n    \"repetierTargetTemp\": false, \n    \"sdAlwaysAvailable\": false, \n    \"sdSupport\": true, \n    \"swallowOkAfterResend\": true, \n    \"temperatureGraph\": true, \n    \"waitForStart\": false\n  }, \n  \"folder\": {\n    \"logs\": \"/home/pi/.octoprint/logs\", \n    \"timelapse\": \"/home/pi/.octoprint/timelapse\", \n    \"timelapseTmp\": \"/home/pi/.octoprint/timelapse/tmp\", \n    \"uploads\": \"/home/pi/.octoprint/uploads\", \n    \"watched\": \"/home/pi/.octoprint/watched\"\n  }, \n  \"plugins\": {\n    \"cura\": {\n      \"cura_engine\": \"/usr/local/bin/cura_engine\", \n      \"debug_logging\": false, \n      \"default_profile\": null\n    }, \n    \"discovery\": {\n      \"httpPassword\": null, \n      \"httpUsername\": null, \n      \"model\": {\n        \"description\": null, \n        \"name\": null, \n        \"number\": null, \n        \"serial\": null, \n        \"url\": null, \n        \"vendor\": null, \n        \"vendorUrl\": null\n      }, \n      \"pathPrefix\": null, \n      \"publicHost\": null, \n      \"publicPort\": 80, \n      \"upnpUuid\": \"eee2d143-7153-4fd9-b7af-e25700bb0519\", \n      \"zeroConf\": []\n    }, \n    \"pluginmanager\": {\n      \"dependency_links\": false, \n      \"hidden\": [], \n      \"pip\": null, \n      \"pip_args\": null, \n      \"repository\": \"http://plugins.octoprint.org/plugins.json\", \n      \"repository_ttl\": 1440\n    }, \n    \"softwareupdate\": {\n      \"cache_ttl\": 1440, \n      \"check_providers\": {}, \n      \"octoprint_checkout_folder\": \"/home/pi/OctoPrint\", \n      \"octoprint_type\": \"github_release\", \n      \"pip_command\": null\n    }\n  }, \n  \"printer\": {\n    \"defaultExtrusionLength\": 5\n  }, \n  \"scripts\": {\n    \"gcode\": {\n      \"afterPrintCancelled\": \"; disable motors\\nM84\\n\\n;disable all heaters\\n{% snippet 'disable_hotends' %}\\n{% snippet 'disable_bed' %}\\n;disable fan\\nM106 S0\", \n      \"snippets/disable_bed\": \"{% if printer_profile.heatedBed %}M140 S0\\n{% endif %}\", \n      \"snippets/disable_hotends\": \"{% for tool in range(printer_profile.extruder.count) %}M104 T{{ tool }} S0\\n{% endfor %}\"\n    }\n  }, \n  \"serial\": {\n    \"additionalPorts\": [], \n    \"autoconnect\": false, \n    \"baudrate\": null, \n    \"baudrateOptions\": [\n      250000, \n      230400, \n      115200, \n      57600, \n      38400, \n      19200, \n      9600\n    ], \n    \"checksumRequiringCommands\": [\n      \"M110\"\n    ], \n    \"disconnectOnErrors\": true, \n    \"helloCommand\": \"M110 N0\", \n    \"ignoreErrorsFromFirmware\": false, \n    \"log\": false, \n    \"longRunningCommands\": [\n      \"G4\", \n      \"G28\", \n      \"G29\", \n      \"G30\", \n      \"G32\", \n      \"M400\", \n      \"M226\"\n    ], \n    \"port\": null, \n    \"portOptions\": [\n      \"VIRTUAL\"\n    ], \n    \"timeoutCommunication\": 30.0, \n    \"timeoutConnection\": 10.0, \n    \"timeoutDetection\": 0.5, \n    \"timeoutSdStatus\": 1.0, \n    \"timeoutTemperature\": 5.0, \n    \"triggerOkForM29\": true\n  }, \n  \"server\": {\n    \"commands\": {\n      \"serverRestartCommand\": \"sudo service octoprint restart\", \n      \"systemRestartCommand\": \"sudo shutdown -r now\", \n      \"systemShutdownCommand\": null\n    }, \n    \"diskspace\": {\n      \"critical\": 209715200, \n      \"warning\": 524288000\n    }\n  }, \n  \"system\": {\n    \"actions\": [\n      {\n        \"action\": \"shutdown\", \n        \"async\": true, \n        \"command\": \"sudo shutdown -h now\", \n        \"confirm\": \"You are about to shutdown the system.\", \n        \"ignore\": true, \n        \"name\": \"Shutdown\"\n      }, \n      {\n        \"action\": \"reboot\", \n        \"async\": true, \n        \"command\": \"sudo shutdown -r now\", \n        \"confirm\": \"You are about to reboot the system\", \n        \"ignore\": true, \n        \"name\": \"Reboot\"\n      }, \n      {\n        \"action\": \"restart\", \n        \"async\": true, \n        \"command\": \"sudo service octoprint restart\", \n        \"confirm\": \"You are about to restart OctoPrint\", \n        \"ignore\": true, \n        \"name\": \"Restart OctoPrint\"\n      }\n    ], \n    \"events\": null\n  }, \n  \"temperature\": {\n    \"cutoff\": 30, \n    \"profiles\": [\n      {\n        \"bed\": 100, \n        \"extruder\": 210, \n        \"name\": \"ABS\"\n      }, \n      {\n        \"bed\": 60, \n        \"extruder\": 180, \n        \"name\": \"PLA\"\n      }\n    ]\n  }, \n  \"terminalFilters\": [\n    {\n      \"name\": \"Suppress M105 requests/responses\", \n      \"regex\": \"(Send: M105)|(Recv: ok (B|T\\\\d*):)\"\n    }, \n    {\n      \"name\": \"Suppress M27 requests/responses\", \n      \"regex\": \"(Send: M27)|(Recv: SD printing byte)\"\n    }\n  ], \n  \"webcam\": {\n    \"bitrate\": \"5000k\", \n    \"ffmpegPath\": \"/usr/bin/avconv\", \n    \"ffmpegThreads\": 1, \n    \"flipH\": false, \n    \"flipV\": false, \n    \"rotate90\": false, \n    \"snapshotUrl\": \"http://127.0.0.1:8080/?action=snapshot\", \n    \"streamUrl\": \"/webcam/?action=stream\", \n    \"watermark\": true\n  }\n}"
+        },
+        "headers": {
+          "Cache-Control": [
+            "no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0"
+          ],
+          "Content-Length": [
+            "5047"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Expires": [
+            "-1"
+          ],
+          "Pragma": [
+            "no-cache"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNOjPMJKkiKywTpLi1OLkG2OMHIrTwy0BcrVAgBgFjO_.C9-Osg.b2ivS1J-YBJOQe-KMGQt4gBvbUk; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/settings"
+      }
+    },
+    {
+      "recorded_at": "2017-04-24T13:27:15",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"appearance\": {\"name\": \"Test\"}}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "32"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNOjPMJKkiKywTpLi1OLkG2OMHIrTwy0BcrVAgBgFjO_.C9-Osg.b2ivS1J-YBJOQe-KMGQt4gBvbUk"
+          ],
+          "User-Agent": [
+            "python-requests/2.13.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://printer15.local/api/settings"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": {\n    \"allowCrossOrigin\": false, \n    \"enabled\": true, \n    \"key\": \"YouShallNotPass\"\n  }, \n  \"appearance\": {\n    \"color\": \"default\", \n    \"colorTransparent\": false, \n    \"defaultLanguage\": \"_default\", \n    \"name\": \"Test\"\n  }, \n  \"feature\": {\n    \"alwaysSendChecksum\": false, \n    \"externalHeatupDetection\": true, \n    \"gcodeViewer\": true, \n    \"ignoreIdenticalResends\": false, \n    \"keyboardControl\": true, \n    \"pollWatched\": false, \n    \"repetierTargetTemp\": false, \n    \"sdAlwaysAvailable\": false, \n    \"sdSupport\": true, \n    \"swallowOkAfterResend\": true, \n    \"temperatureGraph\": true, \n    \"waitForStart\": false\n  }, \n  \"folder\": {\n    \"logs\": \"/home/pi/.octoprint/logs\", \n    \"timelapse\": \"/home/pi/.octoprint/timelapse\", \n    \"timelapseTmp\": \"/home/pi/.octoprint/timelapse/tmp\", \n    \"uploads\": \"/home/pi/.octoprint/uploads\", \n    \"watched\": \"/home/pi/.octoprint/watched\"\n  }, \n  \"plugins\": {\n    \"cura\": {\n      \"cura_engine\": \"/usr/local/bin/cura_engine\", \n      \"debug_logging\": false, \n      \"default_profile\": null\n    }, \n    \"discovery\": {\n      \"httpPassword\": null, \n      \"httpUsername\": null, \n      \"model\": {\n        \"description\": null, \n        \"name\": null, \n        \"number\": null, \n        \"serial\": null, \n        \"url\": null, \n        \"vendor\": null, \n        \"vendorUrl\": null\n      }, \n      \"pathPrefix\": null, \n      \"publicHost\": null, \n      \"publicPort\": 80, \n      \"upnpUuid\": \"eee2d143-7153-4fd9-b7af-e25700bb0519\", \n      \"zeroConf\": []\n    }, \n    \"pluginmanager\": {\n      \"dependency_links\": false, \n      \"hidden\": [], \n      \"pip\": null, \n      \"pip_args\": null, \n      \"repository\": \"http://plugins.octoprint.org/plugins.json\", \n      \"repository_ttl\": 1440\n    }, \n    \"softwareupdate\": {\n      \"cache_ttl\": 1440, \n      \"check_providers\": {}, \n      \"octoprint_checkout_folder\": \"/home/pi/OctoPrint\", \n      \"octoprint_type\": \"github_release\", \n      \"pip_command\": null\n    }\n  }, \n  \"printer\": {\n    \"defaultExtrusionLength\": 5\n  }, \n  \"scripts\": {\n    \"gcode\": {\n      \"afterPrintCancelled\": \"; disable motors\\nM84\\n\\n;disable all heaters\\n{% snippet 'disable_hotends' %}\\n{% snippet 'disable_bed' %}\\n;disable fan\\nM106 S0\", \n      \"snippets/disable_bed\": \"{% if printer_profile.heatedBed %}M140 S0\\n{% endif %}\", \n      \"snippets/disable_hotends\": \"{% for tool in range(printer_profile.extruder.count) %}M104 T{{ tool }} S0\\n{% endfor %}\"\n    }\n  }, \n  \"serial\": {\n    \"additionalPorts\": [], \n    \"autoconnect\": false, \n    \"baudrate\": null, \n    \"baudrateOptions\": [\n      250000, \n      230400, \n      115200, \n      57600, \n      38400, \n      19200, \n      9600\n    ], \n    \"checksumRequiringCommands\": [\n      \"M110\"\n    ], \n    \"disconnectOnErrors\": true, \n    \"helloCommand\": \"M110 N0\", \n    \"ignoreErrorsFromFirmware\": false, \n    \"log\": false, \n    \"longRunningCommands\": [\n      \"G4\", \n      \"G28\", \n      \"G29\", \n      \"G30\", \n      \"G32\", \n      \"M400\", \n      \"M226\"\n    ], \n    \"port\": null, \n    \"portOptions\": [\n      \"VIRTUAL\"\n    ], \n    \"timeoutCommunication\": 30.0, \n    \"timeoutConnection\": 10.0, \n    \"timeoutDetection\": 0.5, \n    \"timeoutSdStatus\": 1.0, \n    \"timeoutTemperature\": 5.0, \n    \"triggerOkForM29\": true\n  }, \n  \"server\": {\n    \"commands\": {\n      \"serverRestartCommand\": \"sudo service octoprint restart\", \n      \"systemRestartCommand\": \"sudo shutdown -r now\", \n      \"systemShutdownCommand\": null\n    }, \n    \"diskspace\": {\n      \"critical\": 209715200, \n      \"warning\": 524288000\n    }\n  }, \n  \"system\": {\n    \"actions\": [\n      {\n        \"action\": \"shutdown\", \n        \"async\": true, \n        \"command\": \"sudo shutdown -h now\", \n        \"confirm\": \"You are about to shutdown the system.\", \n        \"ignore\": true, \n        \"name\": \"Shutdown\"\n      }, \n      {\n        \"action\": \"reboot\", \n        \"async\": true, \n        \"command\": \"sudo shutdown -r now\", \n        \"confirm\": \"You are about to reboot the system\", \n        \"ignore\": true, \n        \"name\": \"Reboot\"\n      }, \n      {\n        \"action\": \"restart\", \n        \"async\": true, \n        \"command\": \"sudo service octoprint restart\", \n        \"confirm\": \"You are about to restart OctoPrint\", \n        \"ignore\": true, \n        \"name\": \"Restart OctoPrint\"\n      }\n    ], \n    \"events\": null\n  }, \n  \"temperature\": {\n    \"cutoff\": 30, \n    \"profiles\": [\n      {\n        \"bed\": 100, \n        \"extruder\": 210, \n        \"name\": \"ABS\"\n      }, \n      {\n        \"bed\": 60, \n        \"extruder\": 180, \n        \"name\": \"PLA\"\n      }\n    ]\n  }, \n  \"terminalFilters\": [\n    {\n      \"name\": \"Suppress M105 requests/responses\", \n      \"regex\": \"(Send: M105)|(Recv: ok (B|T\\\\d*):)\"\n    }, \n    {\n      \"name\": \"Suppress M27 requests/responses\", \n      \"regex\": \"(Send: M27)|(Recv: SD printing byte)\"\n    }\n  ], \n  \"webcam\": {\n    \"bitrate\": \"5000k\", \n    \"ffmpegPath\": \"/usr/bin/avconv\", \n    \"ffmpegThreads\": 1, \n    \"flipH\": false, \n    \"flipV\": false, \n    \"rotate90\": false, \n    \"snapshotUrl\": \"http://127.0.0.1:8080/?action=snapshot\", \n    \"streamUrl\": \"/webcam/?action=stream\", \n    \"watermark\": true\n  }\n}"
+        },
+        "headers": {
+          "Cache-Control": [
+            "pre-check=0, no-cache, no-store, must-revalidate, post-check=0, max-age=0"
+          ],
+          "Content-Length": [
+            "5051"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Expires": [
+            "-1"
+          ],
+          "Pragma": [
+            "no-cache"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNMjjNzKEwNtwTpLi1OL4rHK1QIAU6EzZA.C9-Osw.4F9twoqNEjXuPiBc2-m8wuI9Jyw; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/settings"
+      }
+    },
+    {
+      "recorded_at": "2017-04-24T13:27:16",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"appearance\": {\"name\": \"\"}}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "28"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNMjjNzKEwNtwTpLi1OL4rHK1QIAU6EzZA.C9-Osw.4F9twoqNEjXuPiBc2-m8wuI9Jyw"
+          ],
+          "User-Agent": [
+            "python-requests/2.13.0"
+          ],
+          "X-Api-Key": [
+            "YouShallNotPass"
+          ]
+        },
+        "method": "POST",
+        "uri": "http://printer15.local/api/settings"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{\n  \"api\": {\n    \"allowCrossOrigin\": false, \n    \"enabled\": true, \n    \"key\": \"YouShallNotPass\"\n  }, \n  \"appearance\": {\n    \"color\": \"default\", \n    \"colorTransparent\": false, \n    \"defaultLanguage\": \"_default\", \n    \"name\": \"\"\n  }, \n  \"feature\": {\n    \"alwaysSendChecksum\": false, \n    \"externalHeatupDetection\": true, \n    \"gcodeViewer\": true, \n    \"ignoreIdenticalResends\": false, \n    \"keyboardControl\": true, \n    \"pollWatched\": false, \n    \"repetierTargetTemp\": false, \n    \"sdAlwaysAvailable\": false, \n    \"sdSupport\": true, \n    \"swallowOkAfterResend\": true, \n    \"temperatureGraph\": true, \n    \"waitForStart\": false\n  }, \n  \"folder\": {\n    \"logs\": \"/home/pi/.octoprint/logs\", \n    \"timelapse\": \"/home/pi/.octoprint/timelapse\", \n    \"timelapseTmp\": \"/home/pi/.octoprint/timelapse/tmp\", \n    \"uploads\": \"/home/pi/.octoprint/uploads\", \n    \"watched\": \"/home/pi/.octoprint/watched\"\n  }, \n  \"plugins\": {\n    \"cura\": {\n      \"cura_engine\": \"/usr/local/bin/cura_engine\", \n      \"debug_logging\": false, \n      \"default_profile\": null\n    }, \n    \"discovery\": {\n      \"httpPassword\": null, \n      \"httpUsername\": null, \n      \"model\": {\n        \"description\": null, \n        \"name\": null, \n        \"number\": null, \n        \"serial\": null, \n        \"url\": null, \n        \"vendor\": null, \n        \"vendorUrl\": null\n      }, \n      \"pathPrefix\": null, \n      \"publicHost\": null, \n      \"publicPort\": 80, \n      \"upnpUuid\": \"eee2d143-7153-4fd9-b7af-e25700bb0519\", \n      \"zeroConf\": []\n    }, \n    \"pluginmanager\": {\n      \"dependency_links\": false, \n      \"hidden\": [], \n      \"pip\": null, \n      \"pip_args\": null, \n      \"repository\": \"http://plugins.octoprint.org/plugins.json\", \n      \"repository_ttl\": 1440\n    }, \n    \"softwareupdate\": {\n      \"cache_ttl\": 1440, \n      \"check_providers\": {}, \n      \"octoprint_checkout_folder\": \"/home/pi/OctoPrint\", \n      \"octoprint_type\": \"github_release\", \n      \"pip_command\": null\n    }\n  }, \n  \"printer\": {\n    \"defaultExtrusionLength\": 5\n  }, \n  \"scripts\": {\n    \"gcode\": {\n      \"afterPrintCancelled\": \"; disable motors\\nM84\\n\\n;disable all heaters\\n{% snippet 'disable_hotends' %}\\n{% snippet 'disable_bed' %}\\n;disable fan\\nM106 S0\", \n      \"snippets/disable_bed\": \"{% if printer_profile.heatedBed %}M140 S0\\n{% endif %}\", \n      \"snippets/disable_hotends\": \"{% for tool in range(printer_profile.extruder.count) %}M104 T{{ tool }} S0\\n{% endfor %}\"\n    }\n  }, \n  \"serial\": {\n    \"additionalPorts\": [], \n    \"autoconnect\": false, \n    \"baudrate\": null, \n    \"baudrateOptions\": [\n      250000, \n      230400, \n      115200, \n      57600, \n      38400, \n      19200, \n      9600\n    ], \n    \"checksumRequiringCommands\": [\n      \"M110\"\n    ], \n    \"disconnectOnErrors\": true, \n    \"helloCommand\": \"M110 N0\", \n    \"ignoreErrorsFromFirmware\": false, \n    \"log\": false, \n    \"longRunningCommands\": [\n      \"G4\", \n      \"G28\", \n      \"G29\", \n      \"G30\", \n      \"G32\", \n      \"M400\", \n      \"M226\"\n    ], \n    \"port\": null, \n    \"portOptions\": [\n      \"VIRTUAL\"\n    ], \n    \"timeoutCommunication\": 30.0, \n    \"timeoutConnection\": 10.0, \n    \"timeoutDetection\": 0.5, \n    \"timeoutSdStatus\": 1.0, \n    \"timeoutTemperature\": 5.0, \n    \"triggerOkForM29\": true\n  }, \n  \"server\": {\n    \"commands\": {\n      \"serverRestartCommand\": \"sudo service octoprint restart\", \n      \"systemRestartCommand\": \"sudo shutdown -r now\", \n      \"systemShutdownCommand\": null\n    }, \n    \"diskspace\": {\n      \"critical\": 209715200, \n      \"warning\": 524288000\n    }\n  }, \n  \"system\": {\n    \"actions\": [\n      {\n        \"action\": \"shutdown\", \n        \"async\": true, \n        \"command\": \"sudo shutdown -h now\", \n        \"confirm\": \"You are about to shutdown the system.\", \n        \"ignore\": true, \n        \"name\": \"Shutdown\"\n      }, \n      {\n        \"action\": \"reboot\", \n        \"async\": true, \n        \"command\": \"sudo shutdown -r now\", \n        \"confirm\": \"You are about to reboot the system\", \n        \"ignore\": true, \n        \"name\": \"Reboot\"\n      }, \n      {\n        \"action\": \"restart\", \n        \"async\": true, \n        \"command\": \"sudo service octoprint restart\", \n        \"confirm\": \"You are about to restart OctoPrint\", \n        \"ignore\": true, \n        \"name\": \"Restart OctoPrint\"\n      }\n    ], \n    \"events\": null\n  }, \n  \"temperature\": {\n    \"cutoff\": 30, \n    \"profiles\": [\n      {\n        \"bed\": 100, \n        \"extruder\": 210, \n        \"name\": \"ABS\"\n      }, \n      {\n        \"bed\": 60, \n        \"extruder\": 180, \n        \"name\": \"PLA\"\n      }\n    ]\n  }, \n  \"terminalFilters\": [\n    {\n      \"name\": \"Suppress M105 requests/responses\", \n      \"regex\": \"(Send: M105)|(Recv: ok (B|T\\\\d*):)\"\n    }, \n    {\n      \"name\": \"Suppress M27 requests/responses\", \n      \"regex\": \"(Send: M27)|(Recv: SD printing byte)\"\n    }\n  ], \n  \"webcam\": {\n    \"bitrate\": \"5000k\", \n    \"ffmpegPath\": \"/usr/bin/avconv\", \n    \"ffmpegThreads\": 1, \n    \"flipH\": false, \n    \"flipV\": false, \n    \"rotate90\": false, \n    \"snapshotUrl\": \"http://127.0.0.1:8080/?action=snapshot\", \n    \"streamUrl\": \"/webcam/?action=stream\", \n    \"watermark\": true\n  }\n}"
+        },
+        "headers": {
+          "Cache-Control": [
+            "pre-check=0, no-cache, no-store, must-revalidate, post-check=0, max-age=0"
+          ],
+          "Content-Length": [
+            "5047"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Expires": [
+            "-1"
+          ],
+          "Pragma": [
+            "no-cache"
+          ],
+          "Server": [
+            "TornadoServer/4.0.1"
+          ],
+          "Set-Cookie": [
+            "session=.eJyrVopPK0otzlCyKikqTdVRis9MUbKqVlJIUrJS8g9xyolydzX2dwk09nf3NfF1DzTxdQHh5IrIkJwM_5DA8qiswApf91BbpVodpcyU1LySzJJKvcTSkoz4ksqCVCWrvNKcHCQZJNMjjNzKEwNtwTpLi1OL4rHK1QIAU6EzZA.C9-OtA.qZs1PmwENCY1Fw2yssS9pulv9QA; Path=/; HttpOnly"
+          ],
+          "X-Clacks-Overhead": [
+            "GNU Terry Pratchett"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/api/settings"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
