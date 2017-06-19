@@ -580,16 +580,19 @@ class OctoClient:
 
     def settings(self, settings=None):
         '''
-        Retrieves the current configuration of printer python dict format if argument settings is not given
-        
+        Retrieves the current configuration of printer
+        python dict format if argument settings is not given
+
         Saves provided settings in argument settings (if given)
         and retrieves new settings in python dict format
-        Expects a python dict with the settings to change as request body. 
-        This can be either a full settings tree, 
-        or only a partial tree containing only those fields that should be updated.
-        
-        Data model described http://docs.octoprint.org/en/master/api/settings.html#data-model
-        and http://docs.octoprint.org/en/master/configuration/config_yaml.html#config-yaml
+        Expects a python dict with the settings to change as request body.
+        This can be either a full settings tree,
+        or only a partial tree containing
+        only those fields that should be updated.
+
+        Data model described:
+        http://docs.octoprint.org/en/master/api/settings.html#data-model
+        http://docs.octoprint.org/en/master/configuration/config_yaml.html#config-yaml
         '''
         if settings:
             return self._post('/api/settings', json=settings, ret=True)
