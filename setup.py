@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='octoclient',
-    version='0.1.dev1',
+    version='0.2.dev1',
     description='Client library for OctoPrint REST API',
     long_description=''.join(open('README.rst').readlines()),
     keywords='octoprint, 3d printing',
@@ -12,7 +12,7 @@ setup(
     license='MIT',
     url='https://github.com/hroncok/octoclient',
     packages=[p for p in find_packages() if p != 'tests'],
-    install_requires=['requests'],
+    install_requires=['requests', 'websocket-client'],
     setup_requires=['pytest-runner'],
     tests_require=['pytest', 'betamax-serializers', 'betamax'],
     classifiers=[

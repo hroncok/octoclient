@@ -1,0 +1,67 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-06-19T10:36:45",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.18.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "http://printer15.local/sockjs/info"
+      },
+      "response": {
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\"entropy\":52339962,\"websocket\":true,\"origins\":[\"*:*\"],\"cookie_needed\":true}"
+        },
+        "headers": {
+          "Access-Control-Allow-Credentials": [
+            "true"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Cache-Control": [
+            "no-store, no-cache, must-revalidate, max-age=0"
+          ],
+          "Content-Length": [
+            "76"
+          ],
+          "Content-Type": [
+            "application/json; charset=UTF-8"
+          ],
+          "Date": [
+            "Mon, 19 Jun 2017 10:36:45 GMT"
+          ],
+          "Etag": [
+            "\"420ca7534b1993fe2192d744b69f1915c7887ed8\""
+          ],
+          "Server": [
+            "TornadoServer/4.0.2"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://printer15.local/sockjs/info"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
